@@ -1,4 +1,4 @@
 logger
 ======
 
-CPP Logging module
+Modulable CPP Logging module, inspired from the Python logging module.
