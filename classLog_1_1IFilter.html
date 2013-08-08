@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>CPPLogger: Related Pages</title>
+<title>CPPLogger: Log::IFilter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -37,7 +37,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -56,13 +57,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -71,20 +79,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>Log</b></li><li class="navelem"><a class="el" href="classLog_1_1IFilter.html">IFilter</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classLog_1_1IFilter-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Related Pages</div>  </div>
+<div class="title">Log::IFilter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all related documentation pages:</div><div class="directory">
-<table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><img src="ftv2lastnode.png" alt="\" width="16" height="22" /><a class="el" href="md_README.html" target="_self">logger</a></td><td class="desc"></td></tr>
+<div class="dynheader">
+Inheritance diagram for Log::IFilter:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classLog_1_1IFilter.png" usemap="#Log::IFilter_map" alt=""/>
+  <map id="Log::IFilter_map" name="Log::IFilter_map">
+<area href="classLog_1_1DefaultFilter.html" alt="Log::DefaultFilter" shape="rect" coords="0,56,108,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a95ba80bd17017ec010e0993c6075c02c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a95ba80bd17017ec010e0993c6075c02c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>IFilter</b> (const <a class="el" href="classLog_1_1IFilter.html">IFilter</a> &amp;)</td></tr>
+<tr class="memitem:a5353a9f60f6e0f83e80acd83ed95e5a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5353a9f60f6e0f83e80acd83ed95e5a1"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>filter</b> (const <a class="el" href="structLog_1_1LogEntry.html">LogEntry</a> &amp;entry)=0</td></tr>
 </table>
-</div><!-- directory -->
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>logger/includes/<a class="el" href="IFilter_8hpp_source.html">IFilter.hpp</a></li>
+</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 8 2013 19:40:05 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 8 2013 21:40:56 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

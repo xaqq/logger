@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>CPPLogger: CPPLogger Introduction</title>
+<title>CPPLogger: Class Index</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,8 +36,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -57,6 +57,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li class="current"><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -74,23 +82,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">CPPLogger Introduction </div>  </div>
+<div class="title">Class Index</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>What is CPPLogger</h1>
-<h2>Introduction</h2>
-<p>CPPLogger is an open source C++ logging framework. The source code is, obvisouly, available <a href="http://github.com/xaqq/logger">here</a> on GitHub.</p>
-<p>It provides an extensible set of classes to handle the logging in your application. It is inspired from how the Python logging works, even though it doesn't implement all of its fonctionnality.</p>
-<h2>Code overview</h2>
-<p>There are basically 3 components that interact with is each other.</p>
-<ul>
-<li>The <a class="el" href="classLog_1_1ALogger.html">Log::ALogger</a> class and its subclasses. Thoses are the classes that handle the log of a <a class="el" href="structLog_1_1LogEntry.html">Log::LogEntry</a>. For example, <a class="el" href="classLog_1_1StdoutLogger.html">Log::StdoutLogger</a> write the LogEntry the standard output.</li>
-<li>The <a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a> class is used to format the message (which is stored in Log::LogEntry::msg). As an example, the <a class="el" href="classLog_1_1DefaultFormatter.html">Log::DefaultFormatter</a> object will prepend the log's level to the message. A formatter object is owned by the logger(s) it is attached to. It's the logger responsiblity (and therefor yours if you implement your own subclass of <a class="el" href="classLog_1_1ALogger.html">Log::ALogger</a>) to call the logger object so that it formats the message. Note that it is not mandatory to use a formatter.</li>
-<li>A <a class="el" href="classLog_1_1IFilter.html">Log::IFilter</a> class. Filters are registered to loggers. A Logger can have multiple filters. The <a class="el" href="classLog_1_1DefaultFilter.html">Log::DefaultFilter</a> is a very simple filter that either accept LogEntry whose level is greater or equal than the one specified at the filter's construction, or accept LogEntry whose level were specified during the filter's construction.</li>
-</ul>
-<h1>How to use CPPLogger</h1>
-<p>Read the code and find out ! (Sorry, this is a work in progress.) </p>
-</div></div><!-- contents -->
+<div class="qindex"><a class="qindex" href="#letter_A">A</a>&#160;|&#160;<a class="qindex" href="#letter_D">D</a>&#160;|&#160;<a class="qindex" href="#letter_I">I</a>&#160;|&#160;<a class="qindex" href="#letter_L">L</a>&#160;|&#160;<a class="qindex" href="#letter_S">S</a></div>
+<table style="margin: 10px; white-space: nowrap;" align="center" width="95%" border="0" cellspacing="0" cellpadding="0">
+<tr><td rowspan="2" valign="bottom"><a name="letter_A"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;A&#160;&#160;</div></td></tr></table>
+</td><td rowspan="2" valign="bottom"><a name="letter_D"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;D&#160;&#160;</div></td></tr></table>
+</td><td rowspan="2" valign="bottom"><a name="letter_I"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;I&#160;&#160;</div></td></tr></table>
+</td><td valign="top"><a class="el" href="classLog_1_1LogMgr.html">LogMgr</a> (Log)&#160;&#160;&#160;</td><td></td></tr>
+<tr><td rowspan="2" valign="bottom"><a name="letter_S"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;S&#160;&#160;</div></td></tr></table>
+</td><td></td></tr>
+<tr><td valign="top"><a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> (Log)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classLog_1_1DefaultFilter.html">DefaultFilter</a> (Log)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classLog_1_1IFilter.html">IFilter</a> (Log)&#160;&#160;&#160;</td><td></td></tr>
+<tr><td valign="top"><a class="el" href="classLog_1_1ALogger.html">ALogger</a> (Log)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classLog_1_1DefaultFormatter.html">DefaultFormatter</a> (Log)&#160;&#160;&#160;</td><td rowspan="2" valign="bottom"><a name="letter_L"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;L&#160;&#160;</div></td></tr></table>
+</td><td valign="top"><a class="el" href="classLog_1_1StdoutLogger.html">StdoutLogger</a> (Log)&#160;&#160;&#160;</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td valign="top"><a class="el" href="structLog_1_1LogEntry.html">LogEntry</a> (Log)&#160;&#160;&#160;</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<div class="qindex"><a class="qindex" href="#letter_A">A</a>&#160;|&#160;<a class="qindex" href="#letter_D">D</a>&#160;|&#160;<a class="qindex" href="#letter_I">I</a>&#160;|&#160;<a class="qindex" href="#letter_L">L</a>&#160;|&#160;<a class="qindex" href="#letter_S">S</a></div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Thu Aug 8 2013 21:40:56 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">

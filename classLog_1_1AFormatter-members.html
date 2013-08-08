@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>CPPLogger: CPPLogger Introduction</title>
+<title>CPPLogger: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,8 +36,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -57,7 +57,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,25 +79,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>Log</b></li><li class="navelem"><a class="el" href="classLog_1_1AFormatter.html">AFormatter</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">CPPLogger Introduction </div>  </div>
+<div class="title">Log::AFormatter Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>What is CPPLogger</h1>
-<h2>Introduction</h2>
-<p>CPPLogger is an open source C++ logging framework. The source code is, obvisouly, available <a href="http://github.com/xaqq/logger">here</a> on GitHub.</p>
-<p>It provides an extensible set of classes to handle the logging in your application. It is inspired from how the Python logging works, even though it doesn't implement all of its fonctionnality.</p>
-<h2>Code overview</h2>
-<p>There are basically 3 components that interact with is each other.</p>
-<ul>
-<li>The <a class="el" href="classLog_1_1ALogger.html">Log::ALogger</a> class and its subclasses. Thoses are the classes that handle the log of a <a class="el" href="structLog_1_1LogEntry.html">Log::LogEntry</a>. For example, <a class="el" href="classLog_1_1StdoutLogger.html">Log::StdoutLogger</a> write the LogEntry the standard output.</li>
-<li>The <a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a> class is used to format the message (which is stored in Log::LogEntry::msg). As an example, the <a class="el" href="classLog_1_1DefaultFormatter.html">Log::DefaultFormatter</a> object will prepend the log's level to the message. A formatter object is owned by the logger(s) it is attached to. It's the logger responsiblity (and therefor yours if you implement your own subclass of <a class="el" href="classLog_1_1ALogger.html">Log::ALogger</a>) to call the logger object so that it formats the message. Note that it is not mandatory to use a formatter.</li>
-<li>A <a class="el" href="classLog_1_1IFilter.html">Log::IFilter</a> class. Filters are registered to loggers. A Logger can have multiple filters. The <a class="el" href="classLog_1_1DefaultFilter.html">Log::DefaultFilter</a> is a very simple filter that either accept LogEntry whose level is greater or equal than the one specified at the filter's construction, or accept LogEntry whose level were specified during the filter's construction.</li>
-</ul>
-<h1>How to use CPPLogger</h1>
-<p>Read the code and find out ! (Sorry, this is a work in progress.) </p>
-</div></div><!-- contents -->
+
+<p>This is the complete list of members for <a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a>, including all inherited members.</p>
+<table class="directory">
+  <tr bgcolor="#f0f0f0"class="even"><td class="entry"><b>_logger</b> (defined in <a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a>)</td><td class="entry"><a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>AFormatter</b>(std::weak_ptr&lt; ALogger &gt; logger) (defined in <a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a>)</td><td class="entry"><a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0"class="even"><td class="entry"><b>AFormatter</b>(const AFormatter &amp;) (defined in <a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a>)</td><td class="entry"><a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>format</b>(const LogEntry &amp;entry)=0 (defined in <a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a>)</td><td class="entry"><a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0"class="even"><td class="entry"><b>logger</b>() (defined in <a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a>)</td><td class="entry"><a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+</table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Thu Aug 8 2013 21:40:56 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">

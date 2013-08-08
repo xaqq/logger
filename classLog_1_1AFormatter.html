@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>CPPLogger: CPPLogger Introduction</title>
+<title>CPPLogger: Log::AFormatter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,8 +36,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -57,7 +57,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,25 +79,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>Log</b></li><li class="navelem"><a class="el" href="classLog_1_1AFormatter.html">AFormatter</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="classLog_1_1AFormatter-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">CPPLogger Introduction </div>  </div>
+<div class="title">Log::AFormatter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>What is CPPLogger</h1>
-<h2>Introduction</h2>
-<p>CPPLogger is an open source C++ logging framework. The source code is, obvisouly, available <a href="http://github.com/xaqq/logger">here</a> on GitHub.</p>
-<p>It provides an extensible set of classes to handle the logging in your application. It is inspired from how the Python logging works, even though it doesn't implement all of its fonctionnality.</p>
-<h2>Code overview</h2>
-<p>There are basically 3 components that interact with is each other.</p>
-<ul>
-<li>The <a class="el" href="classLog_1_1ALogger.html">Log::ALogger</a> class and its subclasses. Thoses are the classes that handle the log of a <a class="el" href="structLog_1_1LogEntry.html">Log::LogEntry</a>. For example, <a class="el" href="classLog_1_1StdoutLogger.html">Log::StdoutLogger</a> write the LogEntry the standard output.</li>
-<li>The <a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a> class is used to format the message (which is stored in Log::LogEntry::msg). As an example, the <a class="el" href="classLog_1_1DefaultFormatter.html">Log::DefaultFormatter</a> object will prepend the log's level to the message. A formatter object is owned by the logger(s) it is attached to. It's the logger responsiblity (and therefor yours if you implement your own subclass of <a class="el" href="classLog_1_1ALogger.html">Log::ALogger</a>) to call the logger object so that it formats the message. Note that it is not mandatory to use a formatter.</li>
-<li>A <a class="el" href="classLog_1_1IFilter.html">Log::IFilter</a> class. Filters are registered to loggers. A Logger can have multiple filters. The <a class="el" href="classLog_1_1DefaultFilter.html">Log::DefaultFilter</a> is a very simple filter that either accept LogEntry whose level is greater or equal than the one specified at the filter's construction, or accept LogEntry whose level were specified during the filter's construction.</li>
+<div class="dynheader">
+Inheritance diagram for Log::AFormatter:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classLog_1_1AFormatter.png" usemap="#Log::AFormatter_map" alt=""/>
+  <map id="Log::AFormatter_map" name="Log::AFormatter_map">
+<area href="classLog_1_1DefaultFormatter.html" alt="Log::DefaultFormatter" shape="rect" coords="0,56,133,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ad2c97293518de63321fe906aa84f8d44"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad2c97293518de63321fe906aa84f8d44"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AFormatter</b> (std::weak_ptr&lt; <a class="el" href="classLog_1_1ALogger.html">ALogger</a> &gt; logger)</td></tr>
+<tr class="memitem:a0ad79d6a82873e048647fd839044ab07"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ad79d6a82873e048647fd839044ab07"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AFormatter</b> (const <a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> &amp;)</td></tr>
+<tr class="memitem:ae500b23e8d66f08f0ead96b9020a1abd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae500b23e8d66f08f0ead96b9020a1abd"></a>
+virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>format</b> (const <a class="el" href="structLog_1_1LogEntry.html">LogEntry</a> &amp;entry)=0</td></tr>
+<tr class="memitem:a10e7c22564d8676ef3bb76da4d90f949"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10e7c22564d8676ef3bb76da4d90f949"></a>
+std::shared_ptr&lt; <a class="el" href="classLog_1_1ALogger.html">ALogger</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>logger</b> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:afff7624f64a22265183d8440a51ad9ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afff7624f64a22265183d8440a51ad9ca"></a>
+std::weak_ptr&lt; <a class="el" href="classLog_1_1ALogger.html">ALogger</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_logger</b></td></tr>
+</table>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>logger/includes/<a class="el" href="AFormatter_8hpp_source.html">AFormatter.hpp</a></li>
 </ul>
-<h1>How to use CPPLogger</h1>
-<p>Read the code and find out ! (Sorry, this is a work in progress.) </p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Thu Aug 8 2013 21:40:56 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
