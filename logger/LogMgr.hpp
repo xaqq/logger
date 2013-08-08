@@ -14,6 +14,8 @@
 namespace Log
 {
   class ALogger;
+  enum class LogLevel;
+
   class LogMgr
   {
   public:
@@ -22,7 +24,8 @@ namespace Log
     
 
     static void registerLogger(std::shared_ptr<ALogger> logger);
-    static bool info(const std::string &msg, int line, const char *funcName, const char *fileName);
+    static bool log(const std::string &msg, int line, const char *funcName,
+		    const char *fileName, LogLevel level);
 
   private:
     static std::list<std::shared_ptr<ALogger>> _loggers;

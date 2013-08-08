@@ -12,15 +12,16 @@
 #include "LogMgr.hpp"
 
 #ifdef __GNUC__
-# define INFO(msg) Log::LogMgr::info(msg, __LINE__, __FUNCTION__, __FILE__)
+# define INFO(msg) Log::LogMgr::log(msg, __LINE__, __PRETTY_FUNCTION__,\
+				    __FILE__, ::Log::LogLevel::INFO)
 #else
-# define INFO(msg) Log::LogMgr::info(msg, __LINE__, __FUNCTION__, __FILE__)
+# define INFO(msg) Log::LogMgr::log(msg, __LINE__, __FUNCTION__, __FILE__, ::Log::LogLevel::INFO)
 #endif
 
 namespace Log
 {
 
-enum LogLevel
+  enum class LogLevel
 {
     INFO,
     WARN,

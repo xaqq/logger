@@ -17,10 +17,11 @@ void LogMgr::registerLogger(std::shared_ptr<ALogger> logger)
   _loggers.push_back(logger);
 }
 
-bool LogMgr::info(const std::string &msg, int line, const char *funcName, const char *fileName)
+bool LogMgr::log(const std::string &msg, int line, const char *funcName,
+		 const char *fileName, LogLevel level)
 {
   bool retval;
-  LogEntry entry {msg, LogLevel::INFO, line, funcName, fileName};
+  LogEntry entry {msg, level, line, funcName, fileName};
 
   retval = true;
   for (std::shared_ptr<ALogger> logger : _loggers)
