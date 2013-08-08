@@ -11,10 +11,12 @@ int	main(int, char **)
 	  Log::LogLevel::INFO}));
 
   log->registerFilter(filter);
-  Log::LogMgr::registerLogger(log);
+  Log::LogMgr::registerLogger("default", log);
+  Log::LogMgr::registerLogger("secondary", log);
   log->setFormatter(format);
 
-  INFO("UNE INFO OMFG");
-  WARN("UN WARNING");
+  INFO("UNE INFO OMFG"); // logged twice
+  INFO("INFO TO SPECIFIC LOGGER", {"default"});
+  WARN("UN WARNING"); //logged twice
   ERROR("UNE ERROR"); // not displayed
 }

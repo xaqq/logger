@@ -9,7 +9,8 @@
 #define	LOGMGR_HPP
 
 #include <memory>
-#include <list>
+#include <map>
+#include <string>
 
 namespace Log
 {
@@ -23,16 +24,16 @@ namespace Log
     LogMgr(const LogMgr &) = delete;
     
 
-    static void registerLogger(std::shared_ptr<ALogger> logger);
+    static void registerLogger(const std::string &name,
+			       std::shared_ptr<ALogger> logger);
     static bool log(const std::string &msg, int line, const char *funcName,
-		    const char *fileName, LogLevel level);
+		    const char *fileName, LogLevel level,
+		    std::initializer_list<std::string> loggers);
 
   private:
-    static std::list<std::shared_ptr<ALogger>> _loggers;
+    static std::map<std::string, std::shared_ptr<ALogger>> _loggers;
   };
 
 }
 
 #endif	/* LOGMGR_HPP */
-
-#

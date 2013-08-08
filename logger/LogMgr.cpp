@@ -10,25 +10,39 @@
 
 using namespace Log;
 
-std::list<std::shared_ptr<ALogger>> LogMgr::_loggers;
+std::map<std::string, std::shared_ptr<ALogger>> LogMgr::_loggers;
 
-void LogMgr::registerLogger(std::shared_ptr<ALogger> logger)
+void LogMgr::registerLogger(const std::string &name, std::shared_ptr<ALogger> logger)
 {
-  _loggers.push_back(logger);
+  _loggers[name] = logger;
 }
 
 bool LogMgr::log(const std::string &msg, int line, const char *funcName,
-		 const char *fileName, LogLevel level)
+		 const char *fileName, LogLevel level,
+		 std::initializer_list<std::string> loggers)
 {
   bool retval;
   LogEntry entry {msg, level, line, funcName, fileName};
 
   retval = true;
-  for (std::shared_ptr<ALogger> logger : _loggers)
+  
+  if (loggers.size())
     {
-      if (!logger->filter(entry))
-	continue;
-      retval &= logger->log(entry);
+      for (auto loggerName : loggers)
+	{
+	  if (!_loggers[loggerName]->filter(entry))
+	    continue;
+	  retval &= _loggers[loggerName]->log(entry);
+	}
+    }
+  else
+    {
+      for (std::pair<const std::string, std::shared_ptr<ALogger>> &logger : _loggers)
+	{
+	  if (!logger.second->filter(entry))
+	    continue;
+	  retval &= logger.second->log(entry);
+	}
     }
   return retval;
 }
