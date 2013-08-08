@@ -16,6 +16,7 @@
  *  along with this program.  If not, see [http://www.gnu.org/licenses/].
  */
 
+#include <stdexcept>
 #include "LogMgr.hpp"
 #include "ALogger.hpp"
 #include "LogEntry.hpp"
@@ -42,7 +43,9 @@ bool LogMgr::log(const std::string &msg, int line, const char *funcName,
     {
         for (auto loggerName : loggers)
         {
-            if (_loggers.find(loggerName) == _loggers.end() || !_loggers[loggerName]->filter(entry))
+            if (_loggers.find(loggerName) == _loggers.end())
+                throw std::runtime_error("Logger not found!");
+            if (!_loggers[loggerName]->filter(entry))
                 continue;
             retval &= _loggers[loggerName]->log(entry);
         }
