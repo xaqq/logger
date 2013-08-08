@@ -17,6 +17,9 @@
 # define FUNCTION_NAME_MACRO __FUNCTION__
 #endif
 
+
+# define BUILD(param) [&] (void) { std::stringstream ss; ss << param; return ss.str();}()
+
 /* Let the log entry be dispatched to all loggers */
 # define DEBUG_0(msg) Log::LogMgr::log(msg, __LINE__, FUNCTION_NAME_MACRO, \
 				      __FILE__, ::Log::LogLevel::DEBUG, {})
@@ -36,7 +39,7 @@
 			  )
 
 /* Let the log entry be dispatched to all loggers */
-# define INFO_0(msg) Log::LogMgr::log(msg, __LINE__, FUNCTION_NAME_MACRO, \
+# define INFO_0(msg) Log::LogMgr::log(BUILD(msg), __LINE__, FUNCTION_NAME_MACRO, \
 				      __FILE__, ::Log::LogLevel::INFO, {})
 
 /* Macro to specify target logger(s) */
@@ -88,6 +91,8 @@
 			  ERROR_0(__VA_ARGS__),	\
 			  ERROR_NO_PARAM(__VA_ARGS__),	\
 			  )
+
+
 
 namespace Log
 {
