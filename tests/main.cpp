@@ -3,7 +3,7 @@
 #include "../logger/DefaultFilter.hpp"
 #include <memory>
 
-int	main()
+int	main(int, char **)
 {
   std::shared_ptr<Log::ALogger> log (new Log::StdoutLogger());
   std::shared_ptr<Log::AFormatter> format(new Log::DefaultFormatter(log));
@@ -14,4 +14,5 @@ int	main()
   log->setFormatter(format);
 
   INFO("UNE INFO OMFG");
+  WARN("UN WARNING");
 }

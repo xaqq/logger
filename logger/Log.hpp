@@ -14,18 +14,28 @@
 #ifdef __GNUC__
 # define INFO(msg) Log::LogMgr::log(msg, __LINE__, __PRETTY_FUNCTION__,\
 				    __FILE__, ::Log::LogLevel::INFO)
+
+# define WARN(msg) Log::LogMgr::log(msg, __LINE__, __PRETTY_FUNCTION__,\
+				    __FILE__, ::Log::LogLevel::WARN)
+
+# define ERROR(msg) Log::LogMgr::log(msg, __LINE__, __PRETTY_FUNCTION__,\
+				    __FILE__, ::Log::LogLevel::ERROR)
 #else
 # define INFO(msg) Log::LogMgr::log(msg, __LINE__, __FUNCTION__, __FILE__, ::Log::LogLevel::INFO)
+# define WARN(msg) Log::LogMgr::log(msg, __LINE__, __FUNCTION__, __FILE__, ::Log::LogLevel::WARN)
+# define ERROR(msg) Log::LogMgr::log(msg, __LINE__, __FUNCTION__, __FILE__, ::Log::LogLevel::ERROR)
 #endif
 
 namespace Log
 {
 
   enum class LogLevel
-{
-    INFO,
-    WARN,
-};
+  {
+    DEBUG,
+      INFO,
+      WARN,
+      ERROR,
+      };
 }
 
 #endif	/* LOG_HPP */
