@@ -8,6 +8,15 @@
 #ifndef LOG_HPP
 #define	LOG_HPP
 
+#include <string>
+#include "LogMgr.hpp"
+
+#ifdef __GNUC__
+# define INFO(msg) Log::LogMgr::info(msg, __LINE__, __FUNCTION__, __FILE__)
+#else
+# define INFO(msg) Log::LogMgr::info(msg, __LINE__, __FUNCTION__, __FILE__)
+#endif
+
 namespace Log
 {
 
