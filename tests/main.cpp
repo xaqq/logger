@@ -31,6 +31,12 @@ int	main(int, char **)
   WARN("Hey, I'm a warning");
   ERROR("Ouch, this is bad, an error");
 
-  INFO("This goes to specific logger, so it will be logged once.", {"default"});
-
+  try
+    {
+      INFO("This goes to specific logger, so it will be logged once.", {"default"});
+    }
+  catch (std::exception &e)
+    {
+      std::cerr << e.what() << std::endl;
+    }
 }
