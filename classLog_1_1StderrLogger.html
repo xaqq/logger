@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>CPPLogger: Log::DefaultFormatter Class Reference</title>
+<title>CPPLogger: Log::StderrLogger Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,50 +82,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>Log</b></li><li class="navelem"><a class="el" href="classLog_1_1DefaultFormatter.html">DefaultFormatter</a></li>  </ul>
+<li class="navelem"><b>Log</b></li><li class="navelem"><a class="el" href="classLog_1_1StderrLogger.html">StderrLogger</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="classLog_1_1DefaultFormatter-members.html">List of all members</a>  </div>
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="classLog_1_1StderrLogger-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Log::DefaultFormatter Class Reference</div>  </div>
+<div class="title">Log::StderrLogger Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for Log::DefaultFormatter:</div>
+Inheritance diagram for Log::StderrLogger:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classLog_1_1DefaultFormatter.png" usemap="#Log::DefaultFormatter_map" alt=""/>
-  <map id="Log::DefaultFormatter_map" name="Log::DefaultFormatter_map">
-<area href="classLog_1_1AFormatter.html" alt="Log::AFormatter" shape="rect" coords="0,0,133,24"/>
+  <img src="classLog_1_1StderrLogger.png" usemap="#Log::StderrLogger_map" alt=""/>
+  <map id="Log::StderrLogger_map" name="Log::StderrLogger_map">
+<area href="classLog_1_1ALogger.html" alt="Log::ALogger" shape="rect" coords="0,0,114,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7735aedf401e5d69c26fcdee7e16f925"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7735aedf401e5d69c26fcdee7e16f925"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultFormatter</b> (const <a class="el" href="classLog_1_1DefaultFormatter.html">DefaultFormatter</a> &amp;orig)</td></tr>
-<tr class="memitem:abfb837677dc0ee27df5ff4b724ff61ed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abfb837677dc0ee27df5ff4b724ff61ed"></a>
-virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>format</b> (const <a class="el" href="structLog_1_1LogEntry.html">LogEntry</a> &amp;entry)</td></tr>
-<tr class="inherit_header pub_methods_classLog_1_1AFormatter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classLog_1_1AFormatter')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a></td></tr>
-<tr class="memitem:a0ad79d6a82873e048647fd839044ab07 inherit pub_methods_classLog_1_1AFormatter"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ad79d6a82873e048647fd839044ab07"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AFormatter</b> (const <a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> &amp;)</td></tr>
-<tr class="memitem:a1e9e8d1ed27c1d80099ab9d5dd74aa5f inherit pub_methods_classLog_1_1AFormatter"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e9e8d1ed27c1d80099ab9d5dd74aa5f"></a>
-<a class="el" href="classLog_1_1ALogger.html">ALogger</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>logger</b> ()</td></tr>
-<tr class="memitem:af2fa588074ec6578edad34d2fc14f380 inherit pub_methods_classLog_1_1AFormatter"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af2fa588074ec6578edad34d2fc14f380"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setLogger</b> (<a class="el" href="classLog_1_1ALogger.html">ALogger</a> *logger)</td></tr>
+<tr class="memitem:ac218593be019a4a446a4b3c0599ef43e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac218593be019a4a446a4b3c0599ef43e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>StderrLogger</b> (<a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> *formatter)</td></tr>
+<tr class="memitem:a94bf9c4f00392a576f9b85f5bf963984"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94bf9c4f00392a576f9b85f5bf963984"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>StderrLogger</b> (const <a class="el" href="classLog_1_1StderrLogger.html">StderrLogger</a> &amp;orig)</td></tr>
+<tr class="inherit_header pub_methods_classLog_1_1ALogger"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classLog_1_1ALogger')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="classLog_1_1ALogger.html">Log::ALogger</a></td></tr>
+<tr class="memitem:a0819a874ed70b853d7f2230d30257ee0 inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0819a874ed70b853d7f2230d30257ee0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ALogger</b> (<a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> *formatter)</td></tr>
+<tr class="memitem:a5734217f0f142b4fb59244f998c037cd inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5734217f0f142b4fb59244f998c037cd"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ALogger</b> (const <a class="el" href="classLog_1_1ALogger.html">ALogger</a> &amp;)</td></tr>
+<tr class="memitem:a5a04acd5ad2492d76f8c61dc0567bcbc inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a04acd5ad2492d76f8c61dc0567bcbc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>filter</b> (const <a class="el" href="structLog_1_1LogEntry.html">LogEntry</a> &amp;entry)</td></tr>
+<tr class="memitem:ab740c64e2bea0d5e1dbd6a75638e2cf4 inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab740c64e2bea0d5e1dbd6a75638e2cf4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>registerFilter</b> (std::shared_ptr&lt; <a class="el" href="classLog_1_1IFilter.html">IFilter</a> &gt; filter)</td></tr>
+<tr class="memitem:a2fe78611d91c0605e179becc78d8f98b inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2fe78611d91c0605e179becc78d8f98b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setFormatter</b> (<a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> *formatter)</td></tr>
+<tr class="memitem:a160d7d3d972b42e3d7eeb71c616e3c14 inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a160d7d3d972b42e3d7eeb71c616e3c14"></a>
+<a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>formatter</b> ()</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:aa262586a56d3cd9a7b6f0f3935851ded"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa262586a56d3cd9a7b6f0f3935851ded"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>logLevelToString</b> (<a class="el" href="group__Log.html#ga3718f3e276c3d3e23b58a3b8236d196e">LogLevel</a>) const </td></tr>
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:add5628091baeb6d66b4d9251fc24e27e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add5628091baeb6d66b4d9251fc24e27e"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>log</b> (const <a class="el" href="structLog_1_1LogEntry.html">LogEntry</a> &amp;entry)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classLog_1_1ALogger"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classLog_1_1ALogger')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="classLog_1_1ALogger.html">Log::ALogger</a></td></tr>
+<tr class="memitem:afd9445d4353123b3838fc45e4065ca65 inherit pro_attribs_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd9445d4353123b3838fc45e4065ca65"></a>
+<a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_formatter</b></td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>logger/includes/<a class="el" href="DefaultFormatter_8hpp_source.html">DefaultFormatter.hpp</a></li>
-<li>logger/src/DefaultFormatter.cpp</li>
+<li>logger/includes/<a class="el" href="StderrLogger_8hpp_source.html">StderrLogger.hpp</a></li>
+<li>logger/src/StderrLogger.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

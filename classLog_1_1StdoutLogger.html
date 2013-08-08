@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,19 +106,23 @@ Inheritance diagram for Log::StdoutLogger:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a669b096d4c53200e4e7522a32dfc8b9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a669b096d4c53200e4e7522a32dfc8b9b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>StdoutLogger</b> (<a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> *formatter)</td></tr>
 <tr class="memitem:ae5298c5beca10f72a27ad9c5c494ab43"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5298c5beca10f72a27ad9c5c494ab43"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>StdoutLogger</b> (const <a class="el" href="classLog_1_1StdoutLogger.html">StdoutLogger</a> &amp;orig)</td></tr>
 <tr class="inherit_header pub_methods_classLog_1_1ALogger"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classLog_1_1ALogger')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="classLog_1_1ALogger.html">Log::ALogger</a></td></tr>
+<tr class="memitem:a0819a874ed70b853d7f2230d30257ee0 inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0819a874ed70b853d7f2230d30257ee0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ALogger</b> (<a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> *formatter)</td></tr>
 <tr class="memitem:a5734217f0f142b4fb59244f998c037cd inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5734217f0f142b4fb59244f998c037cd"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ALogger</b> (const <a class="el" href="classLog_1_1ALogger.html">ALogger</a> &amp;)</td></tr>
-<tr class="memitem:a2b7b806d8e428fe542a870aa2b47d05a inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b7b806d8e428fe542a870aa2b47d05a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>filter</b> (<a class="el" href="structLog_1_1LogEntry.html">LogEntry</a> entry)</td></tr>
+<tr class="memitem:a5a04acd5ad2492d76f8c61dc0567bcbc inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a04acd5ad2492d76f8c61dc0567bcbc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>filter</b> (const <a class="el" href="structLog_1_1LogEntry.html">LogEntry</a> &amp;entry)</td></tr>
 <tr class="memitem:ab740c64e2bea0d5e1dbd6a75638e2cf4 inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab740c64e2bea0d5e1dbd6a75638e2cf4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>registerFilter</b> (std::shared_ptr&lt; <a class="el" href="classLog_1_1IFilter.html">IFilter</a> &gt; filter)</td></tr>
-<tr class="memitem:ac02487bbd651166db1b7260ec1a1a67c inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac02487bbd651166db1b7260ec1a1a67c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setFormatter</b> (std::shared_ptr&lt; <a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> &gt; formatter)</td></tr>
-<tr class="memitem:af1dadf40b576eea865856aba77260ff5 inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1dadf40b576eea865856aba77260ff5"></a>
-std::shared_ptr&lt; <a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>formatter</b> ()</td></tr>
+<tr class="memitem:a2fe78611d91c0605e179becc78d8f98b inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2fe78611d91c0605e179becc78d8f98b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setFormatter</b> (<a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> *formatter)</td></tr>
+<tr class="memitem:a160d7d3d972b42e3d7eeb71c616e3c14 inherit pub_methods_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a160d7d3d972b42e3d7eeb71c616e3c14"></a>
+<a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>formatter</b> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -128,8 +132,8 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>log</b> (cons
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classLog_1_1ALogger"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classLog_1_1ALogger')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="classLog_1_1ALogger.html">Log::ALogger</a></td></tr>
-<tr class="memitem:a2eba5d80330ea04313e191202247fa90 inherit pro_attribs_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2eba5d80330ea04313e191202247fa90"></a>
-std::shared_ptr&lt; <a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_formatter</b></td></tr>
+<tr class="memitem:afd9445d4353123b3838fc45e4065ca65 inherit pro_attribs_classLog_1_1ALogger"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd9445d4353123b3838fc45e4065ca65"></a>
+<a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_formatter</b></td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>logger/includes/<a class="el" href="StdoutLogger_8hpp_source.html">StdoutLogger.hpp</a></li>
@@ -138,7 +142,7 @@ std::shared_ptr&lt; <a class="el" href="classLog_1_1AFormatter.html">AFormatter<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 8 2013 23:29:10 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 9 2013 00:54:39 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

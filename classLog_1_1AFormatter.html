@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,27 +106,28 @@ Inheritance diagram for Log::AFormatter:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad2c97293518de63321fe906aa84f8d44"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad2c97293518de63321fe906aa84f8d44"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AFormatter</b> (std::weak_ptr&lt; <a class="el" href="classLog_1_1ALogger.html">ALogger</a> &gt; logger)</td></tr>
 <tr class="memitem:a0ad79d6a82873e048647fd839044ab07"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ad79d6a82873e048647fd839044ab07"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>AFormatter</b> (const <a class="el" href="classLog_1_1AFormatter.html">AFormatter</a> &amp;)</td></tr>
 <tr class="memitem:ae500b23e8d66f08f0ead96b9020a1abd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae500b23e8d66f08f0ead96b9020a1abd"></a>
 virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>format</b> (const <a class="el" href="structLog_1_1LogEntry.html">LogEntry</a> &amp;entry)=0</td></tr>
-<tr class="memitem:a10e7c22564d8676ef3bb76da4d90f949"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10e7c22564d8676ef3bb76da4d90f949"></a>
-std::shared_ptr&lt; <a class="el" href="classLog_1_1ALogger.html">ALogger</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>logger</b> ()</td></tr>
+<tr class="memitem:a1e9e8d1ed27c1d80099ab9d5dd74aa5f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e9e8d1ed27c1d80099ab9d5dd74aa5f"></a>
+<a class="el" href="classLog_1_1ALogger.html">ALogger</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>logger</b> ()</td></tr>
+<tr class="memitem:af2fa588074ec6578edad34d2fc14f380"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af2fa588074ec6578edad34d2fc14f380"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setLogger</b> (<a class="el" href="classLog_1_1ALogger.html">ALogger</a> *logger)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:afff7624f64a22265183d8440a51ad9ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afff7624f64a22265183d8440a51ad9ca"></a>
-std::weak_ptr&lt; <a class="el" href="classLog_1_1ALogger.html">ALogger</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_logger</b></td></tr>
+<tr class="memitem:a526aa6fd79b7ddd52df376678d874fde"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a526aa6fd79b7ddd52df376678d874fde"></a>
+<a class="el" href="classLog_1_1ALogger.html">ALogger</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_logger</b></td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>logger/includes/<a class="el" href="AFormatter_8hpp_source.html">AFormatter.hpp</a></li>
+<li>logger/src/AFormatter.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 8 2013 23:29:10 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 9 2013 00:54:39 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

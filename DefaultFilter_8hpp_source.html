@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,31 +120,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>Log</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classLog_1_1DefaultFilter.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLog_1_1DefaultFilter.html" title="Default filter, which accepts message whose level is greater or equal to the minLevel parameter...">DefaultFilter</a> : <span class="keyword">public</span> <a class="code" href="classLog_1_1IFilter.html">IFilter</a></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classLog_1_1DefaultFilter.html" title="Default filter, which accepts message whose level is greater or equal to the minLevel parameter...">DefaultFilter</a>(<a class="code" href="group__Log.html#ga3718f3e276c3d3e23b58a3b8236d196e" title="The LogLevel enum.">LogLevel</a> minLevel = <a class="code" href="Log_8hpp.html#a96dd473db0b3d10bd43390cdacb00120" title="Debug macro.">LogLevel::DEBUG</a>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classLog_1_1DefaultFilter.html" title="Default filter, which accepts message whose level is greater or equal to the minLevel parameter...">DefaultFilter</a>(std::initializer_list&lt;LogLevel&gt; l);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classLog_1_1DefaultFilter.html" title="Default filter, which accepts message whose level is greater or equal to the minLevel parameter...">DefaultFilter</a>(<span class="keyword">const</span> <a class="code" href="classLog_1_1DefaultFilter.html" title="Default filter, which accepts message whose level is greater or equal to the minLevel parameter...">DefaultFilter</a>&amp; orig) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classLog_1_1DefaultFilter.html" title="Default filter, which accepts message whose level is greater or equal to the minLevel parameter...">DefaultFilter</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> filter(<span class="keyword">const</span> <a class="code" href="structLog_1_1LogEntry.html">LogEntry</a>&amp; entry);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="classLog_1_1DefaultFilter.html#a5ea463f5eb9945e0b434864e37b99a20">   54</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classLog_1_1DefaultFilter.html#a5ea463f5eb9945e0b434864e37b99a20" title="Set to false if the filter was initialized using the initializer_list ctor.">_useMinLevel</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="group__Log.html#ga3718f3e276c3d3e23b58a3b8236d196e" title="The LogLevel enum.">LogLevel</a> _minLevel;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  std::vector&lt;LogLevel&gt; _levels;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* DEFAULTFILTER_HPP */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">enum class</span> <a class="code" href="group__Log.html#ga3718f3e276c3d3e23b58a3b8236d196e" title="The LogLevel enum.">LogLevel</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classLog_1_1DefaultFilter.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLog_1_1DefaultFilter.html" title="Default filter, which accepts message whose level is greater or equal to the minLevel parameter...">DefaultFilter</a> : <span class="keyword">public</span> <a class="code" href="classLog_1_1IFilter.html">IFilter</a></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classLog_1_1DefaultFilter.html" title="Default filter, which accepts message whose level is greater or equal to the minLevel parameter...">DefaultFilter</a>(<a class="code" href="group__Log.html#ga3718f3e276c3d3e23b58a3b8236d196e" title="The LogLevel enum.">LogLevel</a> minLevel);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classLog_1_1DefaultFilter.html" title="Default filter, which accepts message whose level is greater or equal to the minLevel parameter...">DefaultFilter</a>(std::initializer_list&lt;LogLevel&gt; l);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classLog_1_1DefaultFilter.html" title="Default filter, which accepts message whose level is greater or equal to the minLevel parameter...">DefaultFilter</a>(<span class="keyword">const</span> <a class="code" href="classLog_1_1DefaultFilter.html" title="Default filter, which accepts message whose level is greater or equal to the minLevel parameter...">DefaultFilter</a>&amp; orig) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classLog_1_1DefaultFilter.html" title="Default filter, which accepts message whose level is greater or equal to the minLevel parameter...">DefaultFilter</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> filter(<span class="keyword">const</span> <a class="code" href="structLog_1_1LogEntry.html">LogEntry</a>&amp; entry);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="classLog_1_1DefaultFilter.html#a5ea463f5eb9945e0b434864e37b99a20">   55</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classLog_1_1DefaultFilter.html#a5ea463f5eb9945e0b434864e37b99a20" title="Set to false if the filter was initialized using the initializer_list ctor.">_useMinLevel</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="group__Log.html#ga3718f3e276c3d3e23b58a3b8236d196e" title="The LogLevel enum.">LogLevel</a> _minLevel;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::vector&lt;LogLevel&gt; _levels;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* DEFAULTFILTER_HPP */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 8 2013 23:29:10 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 9 2013 00:54:39 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>
