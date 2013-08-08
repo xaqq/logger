@@ -36,7 +36,7 @@ int	main(int, char **)
   int b = 21;
   
   INFO("UNE INFO OMFG. Added some fun:" << b << "and hey, why not a custom class?: " << obj); // logged twice
-  INFO("INFO TO SPECIFIC LOGGER.", {"default"});
+  INFO("INFO TO SPECIFIC LOGGER: " << obj, {"default"});
   WARN("UN WARNING"); //logged twice
   ERROR("UNE ERROR"); // not displayed
 }

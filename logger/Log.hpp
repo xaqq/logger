@@ -21,11 +21,11 @@
 # define BUILD(param) [&] (void) { std::stringstream ss; ss << param; return ss.str();}()
 
 /* Let the log entry be dispatched to all loggers */
-# define DEBUG_0(msg) Log::LogMgr::log(msg, __LINE__, FUNCTION_NAME_MACRO, \
+# define DEBUG_0(msg) Log::LogMgr::log(BUILD(msg), __LINE__, FUNCTION_NAME_MACRO, \
 				      __FILE__, ::Log::LogLevel::DEBUG, {})
 
 /* Macro to specify target logger(s) */
-# define DEBUG_1(msg, loggers) Log::LogMgr::log(msg, __LINE__, FUNCTION_NAME_MACRO,\
+# define DEBUG_1(msg, loggers) Log::LogMgr::log(BUILD(msg), __LINE__, FUNCTION_NAME_MACRO, \
 					       __FILE__, ::Log::LogLevel::DEBUG, loggers)
 
 /* Is here to strip useless extra parameter and call the approriate macro */
@@ -43,7 +43,7 @@
 				      __FILE__, ::Log::LogLevel::INFO, {})
 
 /* Macro to specify target logger(s) */
-# define INFO_1(msg, loggers) Log::LogMgr::log(msg, __LINE__, FUNCTION_NAME_MACRO,\
+# define INFO_1(msg, loggers) Log::LogMgr::log(BUILD(msg), __LINE__, FUNCTION_NAME_MACRO, \
 					       __FILE__, ::Log::LogLevel::INFO, loggers)
 
 /* Is here to strip useless extra parameter and call the approriate macro */
@@ -57,11 +57,11 @@
 			  )
 
 /* Let the log entry be dispatched to all loggers */
-# define WARN_0(msg) Log::LogMgr::log(msg, __LINE__, FUNCTION_NAME_MACRO, \
+# define WARN_0(msg) Log::LogMgr::log(BUILD(msg), __LINE__, FUNCTION_NAME_MACRO, \
 				      __FILE__, ::Log::LogLevel::WARN, {})
 
 /* Macro to specify target logger(s) */
-# define WARN_1(msg, loggers) Log::LogMgr::log(msg, __LINE__, FUNCTION_NAME_MACRO,\
+# define WARN_1(msg, loggers) Log::LogMgr::log(BUILD(msg), __LINE__, FUNCTION_NAME_MACRO, \
 					       __FILE__, ::Log::LogLevel::WARN, loggers)
 
 /* Is here to strip useless extra parameter and call the approriate macro */
@@ -75,11 +75,11 @@
 			  )
 
 /* Let the log entry be dispatched to all loggers */
-# define ERROR_0(msg) Log::LogMgr::log(msg, __LINE__, FUNCTION_NAME_MACRO, \
+# define ERROR_0(msg) Log::LogMgr::log(BUILD(msg), __LINE__, FUNCTION_NAME_MACRO, \
 				      __FILE__, ::Log::LogLevel::ERROR, {})
 
 /* Macro to specify target logger(s) */
-# define ERROR_1(msg, loggers) Log::LogMgr::log(msg, __LINE__, FUNCTION_NAME_MACRO,\
+# define ERROR_1(msg, loggers) Log::LogMgr::log(BUILD(msg), __LINE__, FUNCTION_NAME_MACRO, \
 					       __FILE__, ::Log::LogLevel::ERROR, loggers)
 
 /* Is here to strip useless extra parameter and call the approriate macro */
