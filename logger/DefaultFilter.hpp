@@ -25,7 +25,7 @@ public:
     DefaultFilter(const DefaultFilter& orig) = delete;
     virtual ~DefaultFilter();
 
-    virtual bool filter(LogLevel level) = 0;
+    virtual bool filter(const LogEntry& entry) = 0;
 
     void setLevel(LogLevel level)
     {

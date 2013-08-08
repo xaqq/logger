@@ -12,6 +12,7 @@
 
 namespace Log
 {
+struct LogEntry;
 
 class IFilter
 {
@@ -26,7 +27,7 @@ public:
     }
     IFilter(const IFilter &) = delete;
 
-    virtual bool filter(LogLevel level) = 0;
+    virtual bool filter(const LogEntry &entry) = 0;
 };
 }
 

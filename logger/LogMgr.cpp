@@ -20,11 +20,14 @@ void LogMgr::registerLogger(std::shared_ptr<ALogger> logger)
 bool LogMgr::info(const std::string &msg, int line, const char *funcName, const char *fileName)
 {
   bool retval;
+  LogEntry entry {msg, LogLevel::INFO, line, funcName, fileName};
 
   retval = true;
   for (std::shared_ptr<ALogger> logger : _loggers)
     {
-      retval &= logger->info(msg, line, funcName, fileName);
+      if (!logger->filter(entry))
+	continue;
+      retval &= logger->log(entry);
     }
   return retval;
 }

@@ -20,6 +20,7 @@ namespace Log
 
 class IFilter;
 class AFormatter;
+class LogMgr;
 
 class ALogger
 {
@@ -28,11 +29,8 @@ public:
     ALogger(const ALogger &) = delete;
     virtual ~ALogger();
 
-    bool filter(LogLevel level);
+    bool filter(LogEntry entry);
     void registerFilter(std::shared_ptr<IFilter> filter);
-
-    bool info(const std::string &msg, int line, const char *funcName, const char *fileName);
-    bool warn(const std::string &msg, int line, const char *funcName, const char *fileName);
 
     void setFormatter(std::shared_ptr<AFormatter> formatter)
     {
@@ -44,12 +42,13 @@ public:
         return _formatter;
     }
 
+
+  friend class LogMgr;
 protected:
     std::shared_ptr<AFormatter> _formatter;
 
 private:
     virtual bool log(const LogEntry &entry) = 0;
-
     std::list<std::shared_ptr<IFilter >> _filters;
 };
 }
