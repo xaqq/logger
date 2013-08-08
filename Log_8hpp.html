@@ -37,7 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,48 +85,88 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">Log.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Header file that provide the logging macros.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;string&gt;</code><br/>
-<code>#include &quot;<a class="el" href="LogMgr_8hpp_source.html">LogMgr.hpp</a>&quot;</code><br/>
+<code>#include &quot;LogMgr.hpp&quot;</code><br/>
+<code>#include &lt;sstream&gt;</code><br/>
 </div>
 <p><a href="Log_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespaceLog"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLog.html">Log</a></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ae35e776d959e289b666d4d9fa09cdd7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a">FUNCTION_NAME_MACRO</a>&#160;&#160;&#160;__FUNCTION__</td></tr>
-<tr class="memitem:a0d3c09302aa5ed763d387bcca5678d7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a">BUILD</a>(param)&#160;&#160;&#160;[&amp;] (void) { std::stringstream ss; ss &lt;&lt; param; return ss.str();}()</td></tr>
+<tr class="memdesc:ae35e776d959e289b666d4d9fa09cdd7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro used to get the name of the function that called the logging macro.  <a href="#ae35e776d959e289b666d4d9fa09cdd7a"></a><br/></td></tr>
+<tr class="memitem:a0d3c09302aa5ed763d387bcca5678d7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a">BUILD</a>(param)&#160;&#160;&#160;[&amp;] (void) {std::stringstream ss; ss &lt;&lt; param; return ss.str();}()</td></tr>
+<tr class="memdesc:a0d3c09302aa5ed763d387bcca5678d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal macro.  <a href="#a0d3c09302aa5ed763d387bcca5678d7a"></a><br/></td></tr>
 <tr class="memitem:af8200d5fb89dda5c1fd775a98652b359"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#af8200d5fb89dda5c1fd775a98652b359">DEBUG_0</a>(msg)</td></tr>
+<tr class="memdesc:af8200d5fb89dda5c1fd775a98652b359"><td class="mdescLeft">&#160;</td><td class="mdescRight">See "Internal macros documentation".  <a href="#af8200d5fb89dda5c1fd775a98652b359"></a><br/></td></tr>
 <tr class="memitem:a3930e21c7105a58dd0e2ef9b21c385bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a3930e21c7105a58dd0e2ef9b21c385bf">DEBUG_1</a>(msg, loggers)</td></tr>
-<tr class="memitem:a12ca7cc559831224612a182e2ef1fca5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a12ca7cc559831224612a182e2ef1fca5">DEBUG_X</a>(trash, msg, loggers, targetMacro,...)&#160;&#160;&#160;targetMacro</td></tr>
+<tr class="memdesc:a3930e21c7105a58dd0e2ef9b21c385bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">See "Internal macros documentation".  <a href="#a3930e21c7105a58dd0e2ef9b21c385bf"></a><br/></td></tr>
+<tr class="memitem:a12ca7cc559831224612a182e2ef1fca5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12ca7cc559831224612a182e2ef1fca5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a12ca7cc559831224612a182e2ef1fca5">DEBUG_X</a>(trash, msg, loggers, targetMacro,...)&#160;&#160;&#160;targetMacro</td></tr>
+<tr class="memdesc:a12ca7cc559831224612a182e2ef1fca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">See "Internal macros documentation". <br/></td></tr>
 <tr class="memitem:a96dd473db0b3d10bd43390cdacb00120"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a96dd473db0b3d10bd43390cdacb00120">DEBUG</a>(...)</td></tr>
+<tr class="memdesc:a96dd473db0b3d10bd43390cdacb00120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug macro.  <a href="#a96dd473db0b3d10bd43390cdacb00120"></a><br/></td></tr>
 <tr class="memitem:a5de87c02f91c900e6d6cd72840c6b698"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a5de87c02f91c900e6d6cd72840c6b698">INFO_0</a>(msg)</td></tr>
+<tr class="memdesc:a5de87c02f91c900e6d6cd72840c6b698"><td class="mdescLeft">&#160;</td><td class="mdescRight">See "Internal macros documentation".  <a href="#a5de87c02f91c900e6d6cd72840c6b698"></a><br/></td></tr>
 <tr class="memitem:a0ac72fbac2b77e968db6c12704af45f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a0ac72fbac2b77e968db6c12704af45f4">INFO_1</a>(msg, loggers)</td></tr>
-<tr class="memitem:a13aba630b06d7f4e12cbb27e77a6a62a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a13aba630b06d7f4e12cbb27e77a6a62a">INFO_X</a>(trash, msg, loggers, targetMacro,...)&#160;&#160;&#160;targetMacro</td></tr>
+<tr class="memdesc:a0ac72fbac2b77e968db6c12704af45f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">See "Internal macros documentation".  <a href="#a0ac72fbac2b77e968db6c12704af45f4"></a><br/></td></tr>
+<tr class="memitem:a13aba630b06d7f4e12cbb27e77a6a62a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13aba630b06d7f4e12cbb27e77a6a62a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a13aba630b06d7f4e12cbb27e77a6a62a">INFO_X</a>(trash, msg, loggers, targetMacro,...)&#160;&#160;&#160;targetMacro</td></tr>
+<tr class="memdesc:a13aba630b06d7f4e12cbb27e77a6a62a"><td class="mdescLeft">&#160;</td><td class="mdescRight">See "Internal macros documentation". <br/></td></tr>
 <tr class="memitem:aedf01192151e10a6620567952711ff69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#aedf01192151e10a6620567952711ff69">INFO</a>(...)</td></tr>
+<tr class="memdesc:aedf01192151e10a6620567952711ff69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information macro.  <a href="#aedf01192151e10a6620567952711ff69"></a><br/></td></tr>
 <tr class="memitem:a0e22b0c8d601fdc52b548e2b631d5c05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a0e22b0c8d601fdc52b548e2b631d5c05">WARN_0</a>(msg)</td></tr>
+<tr class="memdesc:a0e22b0c8d601fdc52b548e2b631d5c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">See "Internal macros documentation".  <a href="#a0e22b0c8d601fdc52b548e2b631d5c05"></a><br/></td></tr>
 <tr class="memitem:aa8373268aeec5a081273ba74bd79ae35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#aa8373268aeec5a081273ba74bd79ae35">WARN_1</a>(msg, loggers)</td></tr>
-<tr class="memitem:a983b9fc52a110930403da1ff1cdc7ec7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a983b9fc52a110930403da1ff1cdc7ec7">WARN_X</a>(trash, msg, loggers, targetMacro,...)&#160;&#160;&#160;targetMacro</td></tr>
+<tr class="memdesc:aa8373268aeec5a081273ba74bd79ae35"><td class="mdescLeft">&#160;</td><td class="mdescRight">See "Internal macros documentation".  <a href="#aa8373268aeec5a081273ba74bd79ae35"></a><br/></td></tr>
+<tr class="memitem:a983b9fc52a110930403da1ff1cdc7ec7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a983b9fc52a110930403da1ff1cdc7ec7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a983b9fc52a110930403da1ff1cdc7ec7">WARN_X</a>(trash, msg, loggers, targetMacro,...)&#160;&#160;&#160;targetMacro</td></tr>
+<tr class="memdesc:a983b9fc52a110930403da1ff1cdc7ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">See "Internal macros documentation". <br/></td></tr>
 <tr class="memitem:a8f75b971030a39ef811d3526a62b36b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a8f75b971030a39ef811d3526a62b36b8">WARN</a>(...)</td></tr>
+<tr class="memdesc:a8f75b971030a39ef811d3526a62b36b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warning macro.  <a href="#a8f75b971030a39ef811d3526a62b36b8"></a><br/></td></tr>
 <tr class="memitem:ab1e7e1dc416f2b6dac1e312d9a69d029"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#ab1e7e1dc416f2b6dac1e312d9a69d029">ERROR_0</a>(msg)</td></tr>
+<tr class="memdesc:ab1e7e1dc416f2b6dac1e312d9a69d029"><td class="mdescLeft">&#160;</td><td class="mdescRight">See "Internal macros documentation".  <a href="#ab1e7e1dc416f2b6dac1e312d9a69d029"></a><br/></td></tr>
 <tr class="memitem:a0d940a4cb0f68a9adec565026048c24f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a0d940a4cb0f68a9adec565026048c24f">ERROR_1</a>(msg, loggers)</td></tr>
-<tr class="memitem:aee360fd068348773de5802c2d55dcfd0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#aee360fd068348773de5802c2d55dcfd0">ERROR_X</a>(trash, msg, loggers, targetMacro,...)&#160;&#160;&#160;targetMacro</td></tr>
+<tr class="memdesc:a0d940a4cb0f68a9adec565026048c24f"><td class="mdescLeft">&#160;</td><td class="mdescRight">See "Internal macros documentation".  <a href="#a0d940a4cb0f68a9adec565026048c24f"></a><br/></td></tr>
+<tr class="memitem:aee360fd068348773de5802c2d55dcfd0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee360fd068348773de5802c2d55dcfd0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#aee360fd068348773de5802c2d55dcfd0">ERROR_X</a>(trash, msg, loggers, targetMacro,...)&#160;&#160;&#160;targetMacro</td></tr>
+<tr class="memdesc:aee360fd068348773de5802c2d55dcfd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">See "Internal macros documentation". <br/></td></tr>
 <tr class="memitem:a02ce8a968600d004ba60858425c46307"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Log_8hpp.html#a02ce8a968600d004ba60858425c46307">ERROR</a>(...)</td></tr>
+<tr class="memdesc:a02ce8a968600d004ba60858425c46307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error macro.  <a href="#a02ce8a968600d004ba60858425c46307"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a3718f3e276c3d3e23b58a3b8236d196e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLog.html#a3718f3e276c3d3e23b58a3b8236d196e">Log::LogLevel</a> </td></tr>
+<tr class="memitem:ga3718f3e276c3d3e23b58a3b8236d196e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Log.html#ga3718f3e276c3d3e23b58a3b8236d196e">Log::LogLevel</a> </td></tr>
+<tr class="memdesc:ga3718f3e276c3d3e23b58a3b8236d196e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The LogLevel enum.  <a href="group__Log.html#ga3718f3e276c3d3e23b58a3b8236d196e">More...</a><br/></td></tr>
 </table>
-<h2>Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Header file that provide the logging macros. </p>
+<p>The is the main header file of the library. It provides the macro that the end user should use for logging.</p>
+<p><em>Note: sstream is included because it is required in an internal macro.</em></p>
+<h2>Internal macros documentation:</h2>
+<p>The logging macros are available in two form:</p>
+<ul>
+<li>One parameter macro: the logging message.</li>
+<li>Two parameters macro: the logging message and a std::initializer_list of strings that are the name of the targeted logger(s).</li>
+</ul>
+<p>To do this, we use variadic macros. For example:</p>
+<ul>
+<li>INFO(...) is the public macro that supports both forms of calls.</li>
+<li><a class="el" href="Log_8hpp.html#a5de87c02f91c900e6d6cd72840c6b698" title="See &quot;Internal macros documentation&quot;.">INFO_0(msg)</a> is the internal macro that implements the behavior for 1 parameter call.</li>
+<li><a class="el" href="Log_8hpp.html#a0ac72fbac2b77e968db6c12704af45f4" title="See &quot;Internal macros documentation&quot;.">INFO_1(msg, loggers)</a> implements the 2 parameters call.</li>
+<li>INFO_X(trash, msg, loggers, targetMacro, ...) is the "dispatching" macro.</li>
+<li>INFO_NO_PARAM is the macro for the 0 parameter call. It doesn't exist, the if this macro gets called, it will raise an error. </li>
+</ul>
+</div><h2>Macro Definition Documentation</h2>
 <a class="anchor" id="a0d3c09302aa5ed763d387bcca5678d7a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -136,10 +176,13 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">param</td><td>)</td>
-          <td>&#160;&#160;&#160;[&amp;] (void) { std::stringstream ss; ss &lt;&lt; param; return ss.str();}()</td>
+          <td>&#160;&#160;&#160;[&amp;] (void) {std::stringstream ss; ss &lt;&lt; param; return ss.str();}()</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Internal macro. </p>
+<p>It is used to create an anonymous lambda to allow the logging macros parameter to behave like a stringstream. </p>
 
 </div>
 </div>
@@ -156,12 +199,15 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="Log_8hpp.html#a12ca7cc559831224612a182e2ef1fca5">DEBUG_X</a>(, ##__VA_ARGS__,        \</div>
-<div class="line">                          <a class="code" href="Log_8hpp.html#a3930e21c7105a58dd0e2ef9b21c385bf">DEBUG_1</a>(__VA_ARGS__), \</div>
-<div class="line">                          <a class="code" href="Log_8hpp.html#af8200d5fb89dda5c1fd775a98652b359">DEBUG_0</a>(__VA_ARGS__), \</div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="Log_8hpp.html#a12ca7cc559831224612a182e2ef1fca5" title="See &quot;Internal macros documentation&quot;.">DEBUG_X</a>(, ##__VA_ARGS__,        \</div>
+<div class="line">                          <a class="code" href="Log_8hpp.html#a3930e21c7105a58dd0e2ef9b21c385bf" title="See &quot;Internal macros documentation&quot;.">DEBUG_1</a>(__VA_ARGS__), \</div>
+<div class="line">                          <a class="code" href="Log_8hpp.html#af8200d5fb89dda5c1fd775a98652b359" title="See &quot;Internal macros documentation&quot;.">DEBUG_0</a>(__VA_ARGS__), \</div>
 <div class="line">                          DEBUG_NO_PARAM(__VA_ARGS__),  \</div>
 <div class="line">                          )</div>
 </div><!-- fragment -->
+<p>Debug macro. </p>
+<p>Issue a log message with DEBUG level </p>
+
 </div>
 </div>
 <a class="anchor" id="af8200d5fb89dda5c1fd775a98652b359"></a>
@@ -177,9 +223,11 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="classLog_1_1LogMgr.html#a42bf4d3d3ec47d7b019948c6abdf9341">Log::LogMgr::log</a>(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a">FUNCTION_NAME_MACRO</a>, \</div>
-<div class="line">                                      __FILE__, ::<a class="code" href="Log_8hpp.html#a96dd473db0b3d10bd43390cdacb00120">Log::LogLevel::DEBUG</a>, {})</div>
+<b>Value:</b><div class="fragment"><div class="line">Log::LogMgr::log(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a" title="Internal macro.">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a" title="Macro used to get the name of the function that called the logging macro.">FUNCTION_NAME_MACRO</a>, \</div>
+<div class="line">                                      __FILE__, ::<a class="code" href="Log_8hpp.html#a96dd473db0b3d10bd43390cdacb00120" title="Debug macro.">Log::LogLevel::DEBUG</a>, {})</div>
 </div><!-- fragment -->
+<p>See "Internal macros documentation". </p>
+
 </div>
 </div>
 <a class="anchor" id="a3930e21c7105a58dd0e2ef9b21c385bf"></a>
@@ -205,52 +253,10 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="classLog_1_1LogMgr.html#a42bf4d3d3ec47d7b019948c6abdf9341">Log::LogMgr::log</a>(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a">FUNCTION_NAME_MACRO</a>, \</div>
-<div class="line">                                               __FILE__, ::<a class="code" href="Log_8hpp.html#a96dd473db0b3d10bd43390cdacb00120">Log::LogLevel::DEBUG</a>, loggers)</div>
+<b>Value:</b><div class="fragment"><div class="line">Log::LogMgr::log(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a" title="Internal macro.">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a" title="Macro used to get the name of the function that called the logging macro.">FUNCTION_NAME_MACRO</a>, \</div>
+<div class="line">                                               __FILE__, ::<a class="code" href="Log_8hpp.html#a96dd473db0b3d10bd43390cdacb00120" title="Debug macro.">Log::LogLevel::DEBUG</a>, loggers)</div>
 </div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a12ca7cc559831224612a182e2ef1fca5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_X</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">trash, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">msg, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">loggers, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">targetMacro, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;targetMacro</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>See "Internal macros documentation". </p>
 
 </div>
 </div>
@@ -267,12 +273,15 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="Log_8hpp.html#aee360fd068348773de5802c2d55dcfd0">ERROR_X</a>(, ##__VA_ARGS__,        \</div>
-<div class="line">                          <a class="code" href="Log_8hpp.html#a0d940a4cb0f68a9adec565026048c24f">ERROR_1</a>(__VA_ARGS__), \</div>
-<div class="line">                          <a class="code" href="Log_8hpp.html#ab1e7e1dc416f2b6dac1e312d9a69d029">ERROR_0</a>(__VA_ARGS__), \</div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="Log_8hpp.html#aee360fd068348773de5802c2d55dcfd0" title="See &quot;Internal macros documentation&quot;.">ERROR_X</a>(, ##__VA_ARGS__,        \</div>
+<div class="line">                          <a class="code" href="Log_8hpp.html#a0d940a4cb0f68a9adec565026048c24f" title="See &quot;Internal macros documentation&quot;.">ERROR_1</a>(__VA_ARGS__), \</div>
+<div class="line">                          <a class="code" href="Log_8hpp.html#ab1e7e1dc416f2b6dac1e312d9a69d029" title="See &quot;Internal macros documentation&quot;.">ERROR_0</a>(__VA_ARGS__), \</div>
 <div class="line">                          ERROR_NO_PARAM(__VA_ARGS__),  \</div>
 <div class="line">                          )</div>
 </div><!-- fragment -->
+<p>Error macro. </p>
+<p>Issue a log message with ERROR level </p>
+
 </div>
 </div>
 <a class="anchor" id="ab1e7e1dc416f2b6dac1e312d9a69d029"></a>
@@ -288,9 +297,11 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="classLog_1_1LogMgr.html#a42bf4d3d3ec47d7b019948c6abdf9341">Log::LogMgr::log</a>(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a">FUNCTION_NAME_MACRO</a>, \</div>
-<div class="line">                                      __FILE__, ::<a class="code" href="Log_8hpp.html#a02ce8a968600d004ba60858425c46307">Log::LogLevel::ERROR</a>, {})</div>
+<b>Value:</b><div class="fragment"><div class="line">Log::LogMgr::log(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a" title="Internal macro.">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a" title="Macro used to get the name of the function that called the logging macro.">FUNCTION_NAME_MACRO</a>, \</div>
+<div class="line">                                      __FILE__, ::<a class="code" href="Log_8hpp.html#a02ce8a968600d004ba60858425c46307" title="Error macro.">Log::LogLevel::ERROR</a>, {})</div>
 </div><!-- fragment -->
+<p>See "Internal macros documentation". </p>
+
 </div>
 </div>
 <a class="anchor" id="a0d940a4cb0f68a9adec565026048c24f"></a>
@@ -316,52 +327,10 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="classLog_1_1LogMgr.html#a42bf4d3d3ec47d7b019948c6abdf9341">Log::LogMgr::log</a>(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a">FUNCTION_NAME_MACRO</a>, \</div>
-<div class="line">                                               __FILE__, ::<a class="code" href="Log_8hpp.html#a02ce8a968600d004ba60858425c46307">Log::LogLevel::ERROR</a>, loggers)</div>
+<b>Value:</b><div class="fragment"><div class="line">Log::LogMgr::log(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a" title="Internal macro.">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a" title="Macro used to get the name of the function that called the logging macro.">FUNCTION_NAME_MACRO</a>, \</div>
+<div class="line">                                               __FILE__, ::<a class="code" href="Log_8hpp.html#a02ce8a968600d004ba60858425c46307" title="Error macro.">Log::LogLevel::ERROR</a>, loggers)</div>
 </div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="aee360fd068348773de5802c2d55dcfd0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ERROR_X</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">trash, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">msg, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">loggers, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">targetMacro, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;targetMacro</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>See "Internal macros documentation". </p>
 
 </div>
 </div>
@@ -374,6 +343,9 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Macro used to get the name of the function that called the logging macro. </p>
+<p>GNU compilers provide a nice macro the get a more detailed name of a function. Otherwise we fallback to a more widespread macro. </p>
 
 </div>
 </div>
@@ -390,12 +362,15 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="Log_8hpp.html#a13aba630b06d7f4e12cbb27e77a6a62a">INFO_X</a>(, ##__VA_ARGS__, \</div>
-<div class="line">                          <a class="code" href="Log_8hpp.html#a0ac72fbac2b77e968db6c12704af45f4">INFO_1</a>(__VA_ARGS__),  \</div>
-<div class="line">                          <a class="code" href="Log_8hpp.html#a5de87c02f91c900e6d6cd72840c6b698">INFO_0</a>(__VA_ARGS__),  \</div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="Log_8hpp.html#a13aba630b06d7f4e12cbb27e77a6a62a" title="See &quot;Internal macros documentation&quot;.">INFO_X</a>(, ##__VA_ARGS__, \</div>
+<div class="line">                          <a class="code" href="Log_8hpp.html#a0ac72fbac2b77e968db6c12704af45f4" title="See &quot;Internal macros documentation&quot;.">INFO_1</a>(__VA_ARGS__),  \</div>
+<div class="line">                          <a class="code" href="Log_8hpp.html#a5de87c02f91c900e6d6cd72840c6b698" title="See &quot;Internal macros documentation&quot;.">INFO_0</a>(__VA_ARGS__),  \</div>
 <div class="line">                          INFO_NO_PARAM(__VA_ARGS__),   \</div>
 <div class="line">                          )</div>
 </div><!-- fragment -->
+<p>Information macro. </p>
+<p>Issue a log message with INFO level. </p>
+
 </div>
 </div>
 <a class="anchor" id="a5de87c02f91c900e6d6cd72840c6b698"></a>
@@ -411,9 +386,11 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="classLog_1_1LogMgr.html#a42bf4d3d3ec47d7b019948c6abdf9341">Log::LogMgr::log</a>(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a">FUNCTION_NAME_MACRO</a>, \</div>
-<div class="line">                                      __FILE__, ::<a class="code" href="Log_8hpp.html#aedf01192151e10a6620567952711ff69">Log::LogLevel::INFO</a>, {})</div>
+<b>Value:</b><div class="fragment"><div class="line">Log::LogMgr::log(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a" title="Internal macro.">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a" title="Macro used to get the name of the function that called the logging macro.">FUNCTION_NAME_MACRO</a>, \</div>
+<div class="line">                                      __FILE__, ::<a class="code" href="Log_8hpp.html#aedf01192151e10a6620567952711ff69" title="Information macro.">Log::LogLevel::INFO</a>, {})</div>
 </div><!-- fragment -->
+<p>See "Internal macros documentation". </p>
+
 </div>
 </div>
 <a class="anchor" id="a0ac72fbac2b77e968db6c12704af45f4"></a>
@@ -439,52 +416,10 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="classLog_1_1LogMgr.html#a42bf4d3d3ec47d7b019948c6abdf9341">Log::LogMgr::log</a>(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a">FUNCTION_NAME_MACRO</a>, \</div>
-<div class="line">                                               __FILE__, ::<a class="code" href="Log_8hpp.html#aedf01192151e10a6620567952711ff69">Log::LogLevel::INFO</a>, loggers)</div>
+<b>Value:</b><div class="fragment"><div class="line">Log::LogMgr::log(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a" title="Internal macro.">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a" title="Macro used to get the name of the function that called the logging macro.">FUNCTION_NAME_MACRO</a>, \</div>
+<div class="line">                                               __FILE__, ::<a class="code" href="Log_8hpp.html#aedf01192151e10a6620567952711ff69" title="Information macro.">Log::LogLevel::INFO</a>, loggers)</div>
 </div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a13aba630b06d7f4e12cbb27e77a6a62a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define INFO_X</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">trash, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">msg, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">loggers, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">targetMacro, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;targetMacro</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>See "Internal macros documentation". </p>
 
 </div>
 </div>
@@ -501,12 +436,15 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="Log_8hpp.html#a983b9fc52a110930403da1ff1cdc7ec7">WARN_X</a>(, ##__VA_ARGS__, \</div>
-<div class="line">                          <a class="code" href="Log_8hpp.html#aa8373268aeec5a081273ba74bd79ae35">WARN_1</a>(__VA_ARGS__),  \</div>
-<div class="line">                          <a class="code" href="Log_8hpp.html#a0e22b0c8d601fdc52b548e2b631d5c05">WARN_0</a>(__VA_ARGS__),  \</div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="Log_8hpp.html#a983b9fc52a110930403da1ff1cdc7ec7" title="See &quot;Internal macros documentation&quot;.">WARN_X</a>(, ##__VA_ARGS__, \</div>
+<div class="line">                          <a class="code" href="Log_8hpp.html#aa8373268aeec5a081273ba74bd79ae35" title="See &quot;Internal macros documentation&quot;.">WARN_1</a>(__VA_ARGS__),  \</div>
+<div class="line">                          <a class="code" href="Log_8hpp.html#a0e22b0c8d601fdc52b548e2b631d5c05" title="See &quot;Internal macros documentation&quot;.">WARN_0</a>(__VA_ARGS__),  \</div>
 <div class="line">                          WARN_NO_PARAM(__VA_ARGS__),   \</div>
 <div class="line">                          )</div>
 </div><!-- fragment -->
+<p>Warning macro. </p>
+<p>Issue a log message with WARN level. </p>
+
 </div>
 </div>
 <a class="anchor" id="a0e22b0c8d601fdc52b548e2b631d5c05"></a>
@@ -522,9 +460,11 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="classLog_1_1LogMgr.html#a42bf4d3d3ec47d7b019948c6abdf9341">Log::LogMgr::log</a>(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a">FUNCTION_NAME_MACRO</a>, \</div>
-<div class="line">                                      __FILE__, ::<a class="code" href="Log_8hpp.html#a8f75b971030a39ef811d3526a62b36b8">Log::LogLevel::WARN</a>, {})</div>
+<b>Value:</b><div class="fragment"><div class="line">Log::LogMgr::log(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a" title="Internal macro.">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a" title="Macro used to get the name of the function that called the logging macro.">FUNCTION_NAME_MACRO</a>, \</div>
+<div class="line">                                      __FILE__, ::<a class="code" href="Log_8hpp.html#a8f75b971030a39ef811d3526a62b36b8" title="Warning macro.">Log::LogLevel::WARN</a>, {})</div>
 </div><!-- fragment -->
+<p>See "Internal macros documentation". </p>
+
 </div>
 </div>
 <a class="anchor" id="aa8373268aeec5a081273ba74bd79ae35"></a>
@@ -550,59 +490,17 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="classLog_1_1LogMgr.html#a42bf4d3d3ec47d7b019948c6abdf9341">Log::LogMgr::log</a>(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a">FUNCTION_NAME_MACRO</a>, \</div>
-<div class="line">                                               __FILE__, ::<a class="code" href="Log_8hpp.html#a8f75b971030a39ef811d3526a62b36b8">Log::LogLevel::WARN</a>, loggers)</div>
+<b>Value:</b><div class="fragment"><div class="line">Log::LogMgr::log(<a class="code" href="Log_8hpp.html#a0d3c09302aa5ed763d387bcca5678d7a" title="Internal macro.">BUILD</a>(msg), __LINE__, <a class="code" href="Log_8hpp.html#ae35e776d959e289b666d4d9fa09cdd7a" title="Macro used to get the name of the function that called the logging macro.">FUNCTION_NAME_MACRO</a>, \</div>
+<div class="line">                                               __FILE__, ::<a class="code" href="Log_8hpp.html#a8f75b971030a39ef811d3526a62b36b8" title="Warning macro.">Log::LogLevel::WARN</a>, loggers)</div>
 </div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a983b9fc52a110930403da1ff1cdc7ec7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define WARN_X</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">trash, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">msg, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">loggers, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">targetMacro, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;targetMacro</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>See "Internal macros documentation". </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 8 2013 20:20:02 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 8 2013 23:29:10 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

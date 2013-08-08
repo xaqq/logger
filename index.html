@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -63,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,14 +87,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>The <a class="el" href="classLog_1_1ALogger.html">Log::ALogger</a> class and its subclasses. Thoses are the classes that handle the log of a <a class="el" href="structLog_1_1LogEntry.html">Log::LogEntry</a>. For example, <a class="el" href="classLog_1_1StdoutLogger.html">Log::StdoutLogger</a> write the LogEntry the standard output.</li>
 <li>The <a class="el" href="classLog_1_1AFormatter.html">Log::AFormatter</a> class is used to format the message (which is stored in Log::LogEntry::msg). As an example, the <a class="el" href="classLog_1_1DefaultFormatter.html">Log::DefaultFormatter</a> object will prepend the log's level to the message. A formatter object is owned by the logger(s) it is attached to. It's the logger responsiblity (and therefor yours if you implement your own subclass of <a class="el" href="classLog_1_1ALogger.html">Log::ALogger</a>) to call the logger object so that it formats the message. Note that it is not mandatory to use a formatter.</li>
-<li>A <a class="el" href="classLog_1_1IFilter.html">Log::IFilter</a> class. Filters are registered to loggers. A Logger can have multiple filters. The <a class="el" href="classLog_1_1DefaultFilter.html">Log::DefaultFilter</a> is a very simple filter that either accept LogEntry whose level is greater or equal than the one specified at the filter's construction, or accept LogEntry whose level were specified during the filter's construction.</li>
+<li>A <a class="el" href="classLog_1_1IFilter.html">Log::IFilter</a> class. Filters are registered to loggers. A Logger can have multiple filters. The <a class="el" href="classLog_1_1DefaultFilter.html" title="Default filter, which accepts message whose level is greater or equal to the minLevel parameter...">Log::DefaultFilter</a> is a very simple filter that either accept LogEntry whose level is greater or equal than the one specified at the filter's construction, or accept LogEntry whose level were specified during the filter's construction.</li>
 </ul>
 <h1>How to use CPPLogger</h1>
 <p>Read the code and find out ! (Sorry, this is a work in progress.) </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 8 2013 21:40:56 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 8 2013 23:29:10 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

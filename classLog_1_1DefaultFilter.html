@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,6 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Default filter, which accepts message whose level is greater or equal to the minLevel parameter.  
+ <a href="classLog_1_1DefaultFilter.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="DefaultFilter_8hpp_source.html">DefaultFilter.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Log::DefaultFilter:</div>
@@ -108,9 +112,9 @@ Inheritance diagram for Log::DefaultFilter:</div>
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af1903270615fbb978afbabaead37171e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1903270615fbb978afbabaead37171e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultFilter</b> (LogLevel minLevel=LogLevel::DEBUG)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultFilter</b> (<a class="el" href="group__Log.html#ga3718f3e276c3d3e23b58a3b8236d196e">LogLevel</a> minLevel=<a class="el" href="Log_8hpp.html#a96dd473db0b3d10bd43390cdacb00120">LogLevel::DEBUG</a>)</td></tr>
 <tr class="memitem:a7488158af0fb07d3994a49a0e7e0cc10"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7488158af0fb07d3994a49a0e7e0cc10"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultFilter</b> (std::initializer_list&lt; LogLevel &gt; l)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultFilter</b> (std::initializer_list&lt; <a class="el" href="group__Log.html#ga3718f3e276c3d3e23b58a3b8236d196e">LogLevel</a> &gt; l)</td></tr>
 <tr class="memitem:a300fec8ee4f636960c828cf536bbcd64"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a300fec8ee4f636960c828cf536bbcd64"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>DefaultFilter</b> (const <a class="el" href="classLog_1_1DefaultFilter.html">DefaultFilter</a> &amp;orig)</td></tr>
 <tr class="memitem:aeeebde498323a81c805d9509799ecb6f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeeebde498323a81c805d9509799ecb6f"></a>
@@ -121,50 +125,30 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>filter</b> (c
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a5ea463f5eb9945e0b434864e37b99a20"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLog_1_1DefaultFilter.html#a5ea463f5eb9945e0b434864e37b99a20">_useMinLevel</a></td></tr>
+<tr class="memitem:a5ea463f5eb9945e0b434864e37b99a20"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ea463f5eb9945e0b434864e37b99a20"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLog_1_1DefaultFilter.html#a5ea463f5eb9945e0b434864e37b99a20">_useMinLevel</a></td></tr>
+<tr class="memdesc:a5ea463f5eb9945e0b434864e37b99a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to false if the filter was initialized using the initializer_list ctor. <br/></td></tr>
 <tr class="memitem:ab00ad3f124ac8e02cc03580e594b66c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab00ad3f124ac8e02cc03580e594b66c6"></a>
-LogLevel&#160;</td><td class="memItemRight" valign="bottom"><b>_minLevel</b></td></tr>
+<a class="el" href="group__Log.html#ga3718f3e276c3d3e23b58a3b8236d196e">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_minLevel</b></td></tr>
 <tr class="memitem:a5ad6b7253bf99e81482b0c8abd548e44"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ad6b7253bf99e81482b0c8abd548e44"></a>
-std::vector&lt; LogLevel &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_levels</b></td></tr>
+std::vector&lt; <a class="el" href="group__Log.html#ga3718f3e276c3d3e23b58a3b8236d196e">LogLevel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_levels</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Default filter, which accepts message whose level is greater or equal to the minLevel parameter </p>
+<div class="textblock"><p>Default filter, which accepts message whose level is greater or equal to the minLevel parameter. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">minLevel</td><td></td></tr>
   </table>
   </dd>
 </dl>
-</div><h2>Member Data Documentation</h2>
-<a class="anchor" id="a5ea463f5eb9945e0b434864e37b99a20"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Log::DefaultFilter::_useMinLevel</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Set to false if the filter was initialized using the initializer_list ctor </p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>logger/includes/<a class="el" href="DefaultFilter_8hpp_source.html">DefaultFilter.hpp</a></li>
 <li>logger/src/DefaultFilter.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 8 2013 21:40:56 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 8 2013 23:29:10 for CPPLogger by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>
