@@ -1,8 +1,7 @@
-#include "../logger/StdoutLogger.hpp"
-#include "../logger/DefaultFormatter.hpp"
-#include "../logger/DefaultFilter.hpp"
+#include "../logger/includes/StdoutLogger.hpp"
+#include "../logger/includes/DefaultFormatter.hpp"
+#include "../logger/includes/DefaultFilter.hpp"
 #include <memory>
-#include <sstream>
 
 
 class Test
