@@ -18,6 +18,9 @@ struct LogEntry
 {
     std::string msg;
     LogLevel    level;
+  int         line;
+  const char *funcName;
+  const char *fileName;
 };
 }
 #endif	/* LOGENTRY_HPP */

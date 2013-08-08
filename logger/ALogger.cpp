@@ -27,20 +27,20 @@ bool ALogger::filter(LogLevel level)
     return true;
 }
 
-bool ALogger::info(const std::string &msg)
+bool ALogger::info(const std::string &msg, int line, const char *funcName, const char *fileName)
 {
     if (!filter(LogLevel::INFO))
-        return false;
-    LogEntry entry{msg, LogLevel::INFO};
-    log(entry);
+        return true;
+    LogEntry entry{msg, LogLevel::INFO, line, funcName, fileName};
+    return log(entry);
 }
 
-bool ALogger::warn(const std::string &msg)
+bool ALogger::warn(const std::string &msg, int line, const char *funcName, const char *fileName)
 {
     if (!filter(LogLevel::WARN))
-        return false;
-    LogEntry entry{msg, LogLevel::WARN};
-    log(entry);
+        return true;
+    LogEntry entry{msg, LogLevel::INFO, line, funcName, fileName};
+    return log(entry);
 }
 
 void ALogger::registerFilter(std::shared_ptr<IFilter> filter)

@@ -31,8 +31,8 @@ public:
     bool filter(LogLevel level);
     void registerFilter(std::shared_ptr<IFilter> filter);
 
-    bool info(const std::string &msg);
-    bool warn(const std::string &msg);
+    bool info(const std::string &msg, int line, const char *funcName, const char *fileName);
+    bool warn(const std::string &msg, int line, const char *funcName, const char *fileName);
 
     void setFormatter(std::shared_ptr<AFormatter> formatter)
     {

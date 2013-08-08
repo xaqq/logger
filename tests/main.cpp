@@ -10,7 +10,5 @@ int	main()
   Log::LogMgr::registerLogger(log);
   log->setFormatter(format);
 
-  log->info("TOTO");
-  log->warn("Bla");
   INFO("UNE INFO OMFG");
 }

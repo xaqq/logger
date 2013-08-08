@@ -21,5 +21,6 @@ StdoutLogger::~StdoutLogger()
 
 bool StdoutLogger::log(const LogEntry &entry)
 {
-    std::cout << _formatter->format(entry) << std::endl;
+  std::cout << _formatter->format(entry) << std::endl;
+  return true;
 }

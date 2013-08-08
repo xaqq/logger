@@ -6,6 +6,7 @@
  */
 
 #include "DefaultFormatter.hpp"
+#include <sstream>
 
 using namespace Log;
 
@@ -21,12 +22,16 @@ std::string DefaultFormatter::logLevelToString(LogLevel level) const
         return "INFO";
     case LogLevel::WARN:
         return "WARNING";
-    default:
-        return "UNKNOWN";
     }
+    return "UNKNOWN";
 }
 
 std::string DefaultFormatter::format(const LogEntry &entry)
 {
-    return std::string("[" + logLevelToString(entry.level) + "]: " + entry.msg);
+  std::stringstream ss;
+  ss << "[" << logLevelToString(entry.level) << "] @ " << entry.funcName;
+  ss << ", line " << entry.line << " in ";
+  ss << entry.fileName << ": " << entry.msg;
+
+  return ss.str();
 }

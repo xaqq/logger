@@ -24,7 +24,7 @@ bool LogMgr::info(const std::string &msg, int line, const char *funcName, const 
   retval = true;
   for (std::shared_ptr<ALogger> logger : _loggers)
     {
-      retval &= logger->info(msg);
+      retval &= logger->info(msg, line, funcName, fileName);
     }
   return retval;
 }
