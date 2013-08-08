@@ -16,14 +16,9 @@
  *  along with this program.  If not, see [http://www.gnu.org/licenses/].
  */
 
-/*
- * File:   DefaultFormatter.cpp
- * Author: xaqq
- *
- * Created on August 7, 2013, 11:55 PM
- */
-
 #include "DefaultFormatter.hpp"
+#include "LogEntry.hpp"
+#include "Log.hpp"
 #include <sstream>
 
 using namespace Log;

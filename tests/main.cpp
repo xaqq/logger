@@ -1,8 +1,4 @@
-#include "../logger/includes/StdoutLogger.hpp"
-#include "../logger/includes/DefaultFormatter.hpp"
-#include "../logger/includes/DefaultFilter.hpp"
-#include <memory>
-
+#include "../logger/includes/Log.hpp"
 
 class Test
 {

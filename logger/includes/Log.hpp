@@ -192,8 +192,21 @@ enum class LogLevel
     ERROR,
 };
 
+/**
+ * Initialize the logger in a default configuration.
+ * This function is useful when wanting a simple yet working logging configuration.
+ * Feel free to check its implementation to learn how to customize your own, if you want to.
+ */
+void defaultConfig();
+
 /*! @} */
 
 }
+
+#include "ALogger.hpp"
+#include "AFormatter.hpp"
+#include "DefaultFilter.hpp"
+#include "DefaultFormatter.hpp"
+#include "StdoutLogger.hpp"
 
 #endif	/* LOG_HPP */

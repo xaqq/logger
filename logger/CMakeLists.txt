@@ -9,9 +9,11 @@ include_directories ("${PROJECT_SOURCE_DIR}/includes")
 set (SOURCES
   "src/ALogger.cpp"
   "src/DefaultFilter.cpp"
+  "src/AFormatter.cpp"
   "src/DefaultFormatter.cpp"
   "src/LogMgr.cpp"
   "src/StdoutLogger.cpp"
+  "src/Log.cpp"
 )
 
 add_library(Logger ${SOURCES})

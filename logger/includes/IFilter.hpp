@@ -15,21 +15,13 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see [http://www.gnu.org/licenses/].
  */
-/*
- * File:   IFilter.hpp
- * Author: xaqq
- *
- * Created on August 7, 2013, 11:29 PM
- */
 
 #ifndef IFILTER_HPP
 #define	IFILTER_HPP
 
-#include "Log.hpp"
-
 namespace Log
 {
-struct LogEntry;
+class LogEntry;
 
 class IFilter
 {

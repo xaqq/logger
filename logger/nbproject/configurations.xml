@@ -13,9 +13,11 @@
       <in>StdoutLogger.hpp</in>
     </df>
     <df root="/home/xaqq/logger/logger/src" name="src">
+      <in>AFormatter.cpp</in>
       <in>ALogger.cpp</in>
       <in>DefaultFilter.cpp</in>
       <in>DefaultFormatter.cpp</in>
+      <in>Log.cpp</in>
       <in>LogMgr.cpp</in>
       <in>StdoutLogger.cpp</in>
     </df>
@@ -136,6 +138,10 @@
             flavor2="8">
         <ccTool>
         </ccTool>
+      </item>
+      <item path="src/AFormatter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Log.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

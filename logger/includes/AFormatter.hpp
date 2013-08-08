@@ -15,30 +15,25 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see [http://www.gnu.org/licenses/].
  */
-/*
- * File:   AFormatter.hpp
- * Author: xaqq
- *
- * Created on August 7, 2013, 11:50 PM
- */
 
 #ifndef AFORMATTER_HPP
 #define	AFORMATTER_HPP
 
-#include "ALogger.hpp"
-#include "LogEntry.hpp"
+#include <memory>
+#include <string>
 
+#include "ALogger.hpp"
 
 namespace Log
 {
+class ALogger;
+class LogEntry;
 
-class AFormatter
+class AFormatter : public std::enable_shared_from_this<AFormatter>
 {
 public:
 
-    AFormatter(std::weak_ptr<ALogger> logger) : _logger(logger)
-    {
-    }
+    AFormatter(std::weak_ptr<ALogger> logger);
     AFormatter(const AFormatter &) = delete;
 
     virtual std::string format(const LogEntry &entry) = 0;

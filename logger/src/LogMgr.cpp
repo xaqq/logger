@@ -16,15 +16,9 @@
  *  along with this program.  If not, see [http://www.gnu.org/licenses/].
  */
 
-/*
- * File:   LogMgr.cpp
- * Author: xaqq
- *
- * Created on August 8, 2013, 10:30 PM
- */
-
 #include "LogMgr.hpp"
 #include "ALogger.hpp"
+#include "LogEntry.hpp"
 
 using namespace Log;
 
@@ -43,7 +37,7 @@ bool LogMgr::log(const std::string &msg, int line, const char *funcName,
   LogEntry entry {msg, level, line, funcName, fileName};
 
   retval = true;
-  
+
   if (loggers.size())
     {
       for (auto loggerName : loggers)

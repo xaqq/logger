@@ -15,15 +15,11 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see [http://www.gnu.org/licenses/].
  */
-/*
- * File:   ILogger.cpp
- * Author: xaqq
- *
- * Created on August 7, 2013, 11:18 PM
- */
 
 #include "ALogger.hpp"
 #include "IFilter.hpp"
+#include "LogEntry.hpp"
+
 using namespace Log;
 
 ALogger::ALogger()
@@ -34,7 +30,7 @@ ALogger::~ALogger()
 {
 }
 
-bool ALogger::filter(LogEntry entry)
+bool ALogger::filter(const LogEntry& entry)
 {
     for (std::shared_ptr<IFilter> filter : _filters)
     {

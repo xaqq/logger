@@ -27,9 +27,9 @@
 
 #include "AFormatter.hpp"
 
-
 namespace Log
 {
+enum class LogLevel;
 
 class DefaultFormatter : public AFormatter
 {

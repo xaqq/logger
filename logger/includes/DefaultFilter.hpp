@@ -30,7 +30,7 @@
 
 namespace Log
 {
-
+enum class LogLevel;
 /**
  * Default filter, which accepts message whose level is greater or equal to the
  * minLevel parameter
@@ -39,7 +39,7 @@ namespace Log
 class DefaultFilter : public IFilter
 {
 public:
-  DefaultFilter(LogLevel minLevel = LogLevel::DEBUG);
+  DefaultFilter(LogLevel minLevel);
   DefaultFilter(std::initializer_list<LogLevel> l);
     DefaultFilter(const DefaultFilter& orig) = delete;
     virtual ~DefaultFilter();

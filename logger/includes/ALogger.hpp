@@ -15,12 +15,6 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see [http://www.gnu.org/licenses/].
  */
-/*
- * File:   ALogger.hpp
- * Author: xaqq
- *
- * Created on August 7, 2013, 11:18 PM
- */
 
 #ifndef ALOGGER_HPP
 #define	ALOGGER_HPP
@@ -28,9 +22,6 @@
 #include <memory>
 #include <string>
 #include <list>
-#include "Log.hpp"
-#include "LogEntry.hpp"
-
 
 namespace Log
 {
@@ -38,6 +29,7 @@ namespace Log
 class IFilter;
 class AFormatter;
 class LogMgr;
+class LogEntry;
 
 class ALogger
 {
@@ -46,7 +38,7 @@ public:
     ALogger(const ALogger &) = delete;
     virtual ~ALogger();
 
-    bool filter(LogEntry entry);
+    bool filter(const LogEntry &entry);
     void registerFilter(std::shared_ptr<IFilter> filter);
 
     void setFormatter(std::shared_ptr<AFormatter> formatter)
@@ -66,7 +58,7 @@ protected:
 
 private:
     virtual bool log(const LogEntry &entry) = 0;
-    std::list<std::shared_ptr<IFilter >> _filters;
+    std::list<std::shared_ptr<IFilter>> _filters;
 };
 }
 #endif	/* ALOGGER_HPP */
