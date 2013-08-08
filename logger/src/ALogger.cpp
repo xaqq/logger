@@ -22,12 +22,15 @@
 
 using namespace Log;
 
-ALogger::ALogger()
+ALogger::ALogger(AFormatter *formatter) :
+_formatter(formatter)
 {
+    _formatter->setLogger(this);
 }
 
 ALogger::~ALogger()
 {
+    delete _formatter;
 }
 
 bool ALogger::filter(const LogEntry& entry)

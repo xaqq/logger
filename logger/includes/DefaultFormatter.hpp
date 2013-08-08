@@ -35,7 +35,7 @@ class DefaultFormatter : public AFormatter
 {
 public:
 
-    DefaultFormatter(std::weak_ptr<ALogger> logger) : AFormatter(logger)
+    DefaultFormatter()
     {
     }
 

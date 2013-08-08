@@ -23,6 +23,8 @@
 #include <string>
 #include <list>
 
+#include "AFormatter.hpp"
+
 namespace Log
 {
 
@@ -34,31 +36,31 @@ class LogEntry;
 class ALogger
 {
 public:
-    ALogger();
+    ALogger(AFormatter *formatter);
     ALogger(const ALogger &) = delete;
     virtual ~ALogger();
 
     bool filter(const LogEntry &entry);
     void registerFilter(std::shared_ptr<IFilter> filter);
 
-    void setFormatter(std::shared_ptr<AFormatter> formatter)
+    void setFormatter(AFormatter *formatter)
     {
         _formatter = formatter;
     }
 
-    std::shared_ptr<AFormatter> formatter()
+    AFormatter *formatter()
     {
         return _formatter;
     }
 
 
-  friend class LogMgr;
+    friend class LogMgr;
 protected:
-    std::shared_ptr<AFormatter> _formatter;
+    AFormatter *_formatter;
 
 private:
     virtual bool log(const LogEntry &entry) = 0;
-    std::list<std::shared_ptr<IFilter>> _filters;
+    std::list<std::shared_ptr<IFilter >> _filters;
 };
 }
 #endif	/* ALOGGER_HPP */

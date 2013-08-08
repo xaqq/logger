@@ -208,5 +208,6 @@ void defaultConfig();
 #include "DefaultFilter.hpp"
 #include "DefaultFormatter.hpp"
 #include "StdoutLogger.hpp"
+#include "StderrLogger.hpp"
 
 #endif	/* LOG_HPP */

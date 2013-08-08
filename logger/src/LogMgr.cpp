@@ -22,39 +22,39 @@
 
 using namespace Log;
 
-std::map<std::string, std::shared_ptr<ALogger>> LogMgr::_loggers;
+std::map<std::string, std::shared_ptr<ALogger >> LogMgr::_loggers;
 
 void LogMgr::registerLogger(const std::string &name, std::shared_ptr<ALogger> logger)
 {
-  _loggers[name] = logger;
+    _loggers[name] = logger;
 }
 
 bool LogMgr::log(const std::string &msg, int line, const char *funcName,
-		 const char *fileName, LogLevel level,
-		 std::initializer_list<std::string> loggers)
+                 const char *fileName, LogLevel level,
+                 std::initializer_list<std::string> loggers)
 {
-  bool retval;
-  LogEntry entry {msg, level, line, funcName, fileName};
+    bool retval;
+    LogEntry entry{msg, level, line, funcName, fileName};
 
-  retval = true;
+    retval = true;
 
-  if (loggers.size())
+    if (loggers.size())
     {
-      for (auto loggerName : loggers)
-	{
-	  if (!_loggers[loggerName]->filter(entry))
-	    continue;
-	  retval &= _loggers[loggerName]->log(entry);
-	}
+        for (auto loggerName : loggers)
+        {
+            if (_loggers.find(loggerName) == _loggers.end() || !_loggers[loggerName]->filter(entry))
+                continue;
+            retval &= _loggers[loggerName]->log(entry);
+        }
     }
-  else
+    else
     {
-      for (std::pair<const std::string, std::shared_ptr<ALogger>> &logger : _loggers)
-	{
-	  if (!logger.second->filter(entry))
-	    continue;
-	  retval &= logger.second->log(entry);
-	}
+        for (std::pair<const std::string, std::shared_ptr < ALogger >> &logger : _loggers)
+        {
+            if (!logger.second->filter(entry))
+                continue;
+            retval &= logger.second->log(entry);
+        }
     }
-  return retval;
+    return retval;
 }

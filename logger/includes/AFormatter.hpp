@@ -29,22 +29,30 @@ namespace Log
 class ALogger;
 class LogEntry;
 
-class AFormatter : public std::enable_shared_from_this<AFormatter>
+class AFormatter
 {
 public:
 
-    AFormatter(std::weak_ptr<ALogger> logger);
+    AFormatter();
     AFormatter(const AFormatter &) = delete;
 
+    virtual ~AFormatter()
+    {
+    }
     virtual std::string format(const LogEntry &entry) = 0;
 
-    std::shared_ptr<ALogger> logger()
+    ALogger *logger()
     {
-        return _logger.lock();
+        return _logger;
+    }
+
+    void setLogger(ALogger *logger)
+    {
+        _logger = logger;
     }
 
 private:
-    std::weak_ptr<ALogger> _logger;
+    ALogger *_logger;
 };
 }
 

@@ -13,6 +13,7 @@ set (SOURCES
   "src/DefaultFormatter.cpp"
   "src/LogMgr.cpp"
   "src/StdoutLogger.cpp"
+  "src/StderrLogger.cpp"
   "src/Log.cpp"
 )
 

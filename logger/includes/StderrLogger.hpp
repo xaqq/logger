@@ -16,38 +16,24 @@
  *  along with this program.  If not, see [http://www.gnu.org/licenses/].
  */
 
-/*
- * File:   DefaultFilter.cpp
- * Author: xaqq
- *
- * Created on August 7, 2013, 11:39 PM
- */
+#ifndef STDERRLOGGER_HPP
+#define	STDERRLOGGER_HPP
 
-#include "DefaultFilter.hpp"
-#include "LogEntry.hpp"
-#include <algorithm>
-
-using namespace Log;
-
-DefaultFilter::DefaultFilter(LogLevel minLevel) :
-  _useMinLevel(true),
-  _minLevel(minLevel)
+#include "ALogger.hpp"
+namespace Log
 {
+
+class StderrLogger : public ALogger
+{
+public:
+    StderrLogger(AFormatter *formatter);
+    StderrLogger(const StderrLogger& orig) = delete;
+    virtual ~StderrLogger();
+
+private:
+    virtual bool log(const LogEntry &entry);
+};
 }
 
-DefaultFilter::DefaultFilter(std::initializer_list<LogLevel> l) :
-  _useMinLevel(false),
-  _levels(l)
-{
-}
+#endif	/* STDOUTLOGGER_HPP */
 
-DefaultFilter::~DefaultFilter()
-{
-}
-
-bool DefaultFilter::filter(const LogEntry &entry)
-{
-  if (_useMinLevel)
-    return entry.level >= _minLevel;
-  return std::find(_levels.begin(), _levels.end(), entry.level) != _levels.end();
-}

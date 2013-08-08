@@ -16,38 +16,20 @@
  *  along with this program.  If not, see [http://www.gnu.org/licenses/].
  */
 
-/*
- * File:   DefaultFilter.cpp
- * Author: xaqq
- *
- * Created on August 7, 2013, 11:39 PM
- */
+#include "Log.hpp"
+#include "LogMgr.hpp"
+#include <memory>
 
-#include "DefaultFilter.hpp"
-#include "LogEntry.hpp"
-#include <algorithm>
-
-using namespace Log;
-
-DefaultFilter::DefaultFilter(LogLevel minLevel) :
-  _useMinLevel(true),
-  _minLevel(minLevel)
+void Log::defaultConfig()
 {
-}
+    std::shared_ptr<ALogger> stdoutLogger(new StdoutLogger(new DefaultFormatter()));
+    std::shared_ptr<ALogger> stderrLogger(new StderrLogger(new DefaultFormatter()));
 
-DefaultFilter::DefaultFilter(std::initializer_list<LogLevel> l) :
-  _useMinLevel(false),
-  _levels(l)
-{
-}
+    std::shared_ptr<IFilter> stdoutFilter(new DefaultFilter({LogLevel::DEBUG, LogLevel::INFO}));
+    std::shared_ptr<IFilter> stderrFilter(new DefaultFilter({LogLevel::WARN, LogLevel::ERROR}));
 
-DefaultFilter::~DefaultFilter()
-{
-}
-
-bool DefaultFilter::filter(const LogEntry &entry)
-{
-  if (_useMinLevel)
-    return entry.level >= _minLevel;
-  return std::find(_levels.begin(), _levels.end(), entry.level) != _levels.end();
+    stdoutLogger->registerFilter(stdoutFilter);
+    stderrLogger->registerFilter(stderrFilter);
+    LogMgr::registerLogger("stdout", stdoutLogger);
+    LogMgr::registerLogger("stderr", stderrLogger);
 }

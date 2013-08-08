@@ -31,6 +31,7 @@
 namespace Log
 {
 enum class LogLevel;
+
 /**
  * Default filter, which accepts message whose level is greater or equal to the
  * minLevel parameter
@@ -39,8 +40,8 @@ enum class LogLevel;
 class DefaultFilter : public IFilter
 {
 public:
-  DefaultFilter(LogLevel minLevel);
-  DefaultFilter(std::initializer_list<LogLevel> l);
+    DefaultFilter(LogLevel minLevel);
+    DefaultFilter(std::initializer_list<LogLevel> l);
     DefaultFilter(const DefaultFilter& orig) = delete;
     virtual ~DefaultFilter();
 
@@ -48,13 +49,13 @@ public:
 
 private:
 
-  /**
-   * Set to false if the filter was initialized using the initializer_list ctor
-   */
-  bool _useMinLevel;
+    /**
+     * Set to false if the filter was initialized using the initializer_list ctor
+     */
+    bool _useMinLevel;
 
-  LogLevel _minLevel;
-  std::vector<LogLevel> _levels;
+    LogLevel _minLevel;
+    std::vector<LogLevel> _levels;
 };
 }
 #endif	/* DEFAULTFILTER_HPP */

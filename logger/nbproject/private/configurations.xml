@@ -10,6 +10,7 @@
       <in>Log.hpp</in>
       <in>LogEntry.hpp</in>
       <in>LogMgr.hpp</in>
+      <in>StderrLogger.hpp</in>
       <in>StdoutLogger.hpp</in>
     </df>
     <df root="/home/xaqq/logger/logger/src" name="src">
@@ -19,6 +20,7 @@
       <in>DefaultFormatter.cpp</in>
       <in>Log.cpp</in>
       <in>LogMgr.cpp</in>
+      <in>StderrLogger.cpp</in>
       <in>StdoutLogger.cpp</in>
     </df>
   </logicalFolder>

@@ -29,10 +29,11 @@
 namespace Log
 {
 
+class AFormatter;
 class StdoutLogger : public ALogger
 {
 public:
-    StdoutLogger();
+    StdoutLogger(AFormatter *formatter);
     StdoutLogger(const StdoutLogger& orig) = delete;
     virtual ~StdoutLogger();
 
