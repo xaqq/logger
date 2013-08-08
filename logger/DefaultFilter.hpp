@@ -9,6 +9,7 @@
 #define	DEFAULTFILTER_HPP
 
 #include "IFilter.hpp"
+#include <vector>
 
 namespace Log
 {
@@ -21,24 +22,22 @@ namespace Log
 class DefaultFilter : public IFilter
 {
 public:
-    DefaultFilter(LogLevel minLevel);
+  DefaultFilter(LogLevel minLevel = LogLevel::DEBUG);
+  DefaultFilter(std::initializer_list<LogLevel> l);
     DefaultFilter(const DefaultFilter& orig) = delete;
     virtual ~DefaultFilter();
 
     virtual bool filter(const LogEntry& entry);
 
-    void setLevel(LogLevel level)
-    {
-        _minLevel = level;
-    }
-
-    LogLevel level() const
-    {
-        return _minLevel;
-    }
-
 private:
-    LogLevel _minLevel;
+
+  /**
+   * Set to false if the filter was initialized using the initializer_list ctor
+   */
+  bool _useMinLevel;
+
+  LogLevel _minLevel;
+  std::vector<LogLevel> _levels;
 };
 }
 #endif	/* DEFAULTFILTER_HPP */
