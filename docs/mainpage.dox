@@ -1,0 +1,31 @@
+/**
+\mainpage CPPLogger Introduction
+
+<h1>What is CPPLogger</h1>
+
+<h2>Introduction</h2>
+CPPLogger is an open source C++ logging framework. The source code is, obvisouly, available <a href="http://github.com/xaqq/logger">here</a> on GitHub.
+
+It provides an extensible set of classes to handle the logging in your application. It is inspired from how the Python logging works, even though it
+doesn't implement all of its fonctionnality.
+
+<h2>Code overview</h2>
+
+There are basically 3 components that interact with is each other.
+
+ - The Log::ALogger class and its subclasses. Thoses are the classes that handle the log of a Log::LogEntry.
+ For example, Log::StdoutLogger write the LogEntry the standard output.
+ - The Log::AFormatter class is used to format the message (which is stored in Log::LogEntry::msg). 
+ As an example, the Log::DefaultFormatter object will prepend the log's level to the message.
+ A formatter object is owned by the logger(s) it is attached to. It's the logger responsiblity (and therefor yours
+  if you implement your own subclass of Log::ALogger) to call the logger object so that it formats the message.
+  Note that it is not mandatory to use a formatter.
+ - A Log::IFilter class. Filters are registered to loggers. A Logger can have multiple filters.
+  The Log::DefaultFilter is a very simple filter that either accept LogEntry whose level is greater or equal than the one
+  specified at the filter's construction, or accept LogEntry whose level were specified during the filter's construction.
+
+<h1>How to use CPPLogger</h1>
+
+Read the code and find out ! (Sorry, this is a work in progress.)
+
+*/
