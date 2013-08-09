@@ -17,4 +17,10 @@ set (SOURCES
   "src/Log.cpp"
 )
 
+# Linux specific sources
+IF (UNIX)
+  set (SOURCES "${SOURCES}"
+    "src/SyslogLogger.cpp")
+endif(UNIX)
+
 add_library(Logger ${SOURCES})

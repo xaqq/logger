@@ -29,7 +29,7 @@ int	main(int, char **)
   /* Logged twice: by the stdout logger (initialized in defaultConfig()) and our logger, stdout2 */
   INFO("Information message ! With some number, and an object:" << b << ", " << obj);
   WARN("Hey, I'm a warning");
-  ERROR("Ouch, this is bad, an error");
+  ERROR("Ouch, this is bad, an error %s");
 
   try
     {

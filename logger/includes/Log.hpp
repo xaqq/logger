@@ -210,4 +210,10 @@ void defaultConfig();
 #include "StdoutLogger.hpp"
 #include "StderrLogger.hpp"
 
+/* Linux logger */
+#ifdef __gnu_linux__
+#include "SyslogLogger.hpp"
+#endif
+
+
 #endif	/* LOG_HPP */

@@ -32,4 +32,12 @@ void Log::defaultConfig()
     stderrLogger->registerFilter(stderrFilter);
     LogMgr::registerLogger("stdout", stdoutLogger);
     LogMgr::registerLogger("stderr", stderrLogger);
+
+    /* Linux syslog facility */
+    #ifdef __gnu_linux__
+    std::shared_ptr<ALogger> syslogLogger(new SyslogLogger(new DefaultFormatter()));
+    std::shared_ptr<IFilter> syslogFilter(new DefaultFilter(LogLevel::ERROR));
+    syslogLogger->registerFilter(syslogFilter);
+    LogMgr::registerLogger("syslog", syslogLogger);
+    #endif
 }
