@@ -23,4 +23,4 @@ IF (UNIX)
     "src/SyslogLogger.cpp")
 endif(UNIX)
 
-add_library(Logger ${SOURCES})
+add_library(Logger SHARED ${SOURCES})
