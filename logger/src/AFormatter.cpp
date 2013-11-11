@@ -17,9 +17,26 @@
  */
 
 #include "AFormatter.hpp"
+#include "Log.hpp"
 using namespace Log;
 
 AFormatter::AFormatter() :
 _logger(nullptr)
 {
+}
+
+std::string AFormatter::logLevelToString(LogLevel level) const
+{
+    switch (level)
+    {
+    case LogLevel::DEBUG:
+      return "DEBUG";
+    case LogLevel::INFO:
+      return "INFO";
+    case LogLevel::WARN:
+      return "WARNING";
+    case LogLevel::ERROR:
+      return "ERROR";
+    }
+    return "UNKNOWN";
 }

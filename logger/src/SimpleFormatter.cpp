@@ -15,34 +15,23 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see [http://www.gnu.org/licenses/].
  */
-/*
- * File:   DefaultFormatter.hpp
- * Author: xaqq
- *
- * Created on August 7, 2013, 11:55 PM
- */
 
-#ifndef DEFAULTFORMATTER_HPP
-#define	DEFAULTFORMATTER_HPP
+#include "SimpleFormatter.hpp"
+#include "LogEntry.hpp"
+#include "Log.hpp"
+#include <sstream>
 
-#include "AFormatter.hpp"
+using namespace Log;
 
-namespace Log
+SimpleFormatter::~SimpleFormatter()
 {
-
-class DefaultFormatter : public AFormatter
-{
-public:
-
-    DefaultFormatter()
-    {
-    }
-
-    DefaultFormatter(const DefaultFormatter& orig) = delete;
-    virtual ~DefaultFormatter();
-
-    virtual std::string format(const LogEntry &entry);
-};
 }
-#endif	/* DEFAULTFORMATTER_HPP */
 
+std::string SimpleFormatter::format(const LogEntry &entry)
+{
+  std::stringstream ss;
+  ss << "[" << logLevelToString(entry.level) << "] @ " << entry.funcName;
+  ss << " --> {" << entry.msg << "}";
+
+  return ss.str();
+}

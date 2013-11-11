@@ -27,22 +27,6 @@ DefaultFormatter::~DefaultFormatter()
 {
 }
 
-std::string DefaultFormatter::logLevelToString(LogLevel level) const
-{
-    switch (level)
-    {
-    case LogLevel::DEBUG:
-      return "DEBUG";
-    case LogLevel::INFO:
-      return "INFO";
-    case LogLevel::WARN:
-      return "WARNING";
-    case LogLevel::ERROR:
-      return "ERROR";
-    }
-    return "UNKNOWN";
-}
-
 std::string DefaultFormatter::format(const LogEntry &entry)
 {
   std::stringstream ss;

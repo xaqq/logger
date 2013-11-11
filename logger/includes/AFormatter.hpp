@@ -26,34 +26,36 @@
 
 namespace Log
 {
-class ALogger;
-class LogEntry;
+  class ALogger;
+  class LogEntry;
+  enum class LogLevel;
 
-class AFormatter
-{
-public:
+  class AFormatter
+  {
+  public:
 
     AFormatter();
     AFormatter(const AFormatter &) = delete;
 
-    virtual ~AFormatter()
-    {
-    }
+    virtual ~AFormatter() { }
     virtual std::string format(const LogEntry &entry) = 0;
 
     ALogger *logger()
     {
-        return _logger;
+      return _logger;
     }
 
     void setLogger(ALogger *logger)
     {
-        _logger = logger;
+      _logger = logger;
     }
 
-private:
+  protected:
+    std::string logLevelToString(LogLevel) const;
+
+  private:
     ALogger *_logger;
-};
+  };
 }
 
 

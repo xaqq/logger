@@ -15,34 +15,27 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see [http://www.gnu.org/licenses/].
  */
-/*
- * File:   DefaultFormatter.hpp
- * Author: xaqq
- *
- * Created on August 7, 2013, 11:55 PM
- */
 
-#ifndef DEFAULTFORMATTER_HPP
-#define	DEFAULTFORMATTER_HPP
+#ifndef SIMPLEFORMATTER_HPP
+#define	SIMPLEFORMATTER_HPP
 
 #include "AFormatter.hpp"
 
 namespace Log
 {
+  enum class LogLevel;
 
-class DefaultFormatter : public AFormatter
-{
-public:
+  class SimpleFormatter : public AFormatter
+  {
+  public:
 
-    DefaultFormatter()
-    {
-    }
+    SimpleFormatter() { }
 
-    DefaultFormatter(const DefaultFormatter& orig) = delete;
-    virtual ~DefaultFormatter();
+    SimpleFormatter(const SimpleFormatter& orig) = delete;
+    virtual ~SimpleFormatter();
 
     virtual std::string format(const LogEntry &entry);
-};
+  };
 }
-#endif	/* DEFAULTFORMATTER_HPP */
+#endif	/* SIMPLEFORMATTER_HPP */
 

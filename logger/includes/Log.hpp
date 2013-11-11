@@ -207,6 +207,7 @@ void defaultConfig();
 #include "AFormatter.hpp"
 #include "DefaultFilter.hpp"
 #include "DefaultFormatter.hpp"
+#include "SimpleFormatter.hpp"
 #include "StdoutLogger.hpp"
 #include "StderrLogger.hpp"
 

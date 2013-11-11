@@ -11,6 +11,7 @@ set (SOURCES
   "src/DefaultFilter.cpp"
   "src/AFormatter.cpp"
   "src/DefaultFormatter.cpp"
+  "src/SimpleFormatter.cpp"
   "src/LogMgr.cpp"
   "src/StdoutLogger.cpp"
   "src/StderrLogger.cpp"
