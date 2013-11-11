@@ -28,6 +28,7 @@
 #include <memory>
 #include <map>
 #include <string>
+#include <atomic>
 
 namespace Log
 {
@@ -49,6 +50,7 @@ namespace Log
 
   private:
     static std::map<std::string, std::shared_ptr<ALogger>> _loggers;
+    static std::atomic_bool isLogging_;
   };
 
 }

@@ -24,6 +24,7 @@
 using namespace Log;
 
 std::map<std::string, std::shared_ptr<ALogger >> LogMgr::_loggers;
+std::atomic_bool LogMgr::isLogging_;
 
 void LogMgr::registerLogger(const std::string &name, std::shared_ptr<ALogger> logger)
 {
@@ -37,8 +38,10 @@ bool LogMgr::log(const std::string &msg, int line, const char *funcName,
     bool retval;
     LogEntry entry{msg, level, line, funcName, fileName};
 
+    while (isLogging_);
+    isLogging_ = true;
     retval = true;
-
+    
     if (loggers.size())
     {
         for (auto loggerName : loggers)
@@ -59,5 +62,6 @@ bool LogMgr::log(const std::string &msg, int line, const char *funcName,
             retval &= logger.second->log(entry);
         }
     }
+    isLogging_ = false;
     return retval;
 }
