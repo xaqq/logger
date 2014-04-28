@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdexcept>
-#include "../logger/includes/Log.hpp"
+#include "../includes/Log.hpp"
 
 class Test
 {
