@@ -20,51 +20,48 @@
 #include "LogMgr.hpp"
 #include "ALogger.hpp"
 #include "LogEntry.hpp"
-#include <iostream>
+
 using namespace Log;
 
 std::map<std::string, std::shared_ptr<ALogger >> LogMgr::_loggers;
-std::mutex LogMgr::mutex_;
+std::atomic_bool LogMgr::isLogging_;
 
 void LogMgr::registerLogger(const std::string &name, std::shared_ptr<ALogger> logger)
 {
-  _loggers[name] = logger;
+    _loggers[name] = logger;
 }
 
 bool LogMgr::log(const std::string &msg, int line, const char *funcName,
                  const char *fileName, LogLevel level,
                  std::initializer_list<std::string> loggers)
 {
-  std::lock_guard<std::mutex> guard(mutex_);
-  bool retval;
-  LogEntry entry
-  {
-    msg, level, line, funcName, fileName
-  };
+    bool retval;
+    LogEntry entry{msg, level, line, funcName, fileName};
 
-  retval = true;
-
-  if (loggers.size())
+    while (isLogging_);
+    isLogging_ = true;
+    retval = true;
+    
+    if (loggers.size())
     {
-      for (auto loggerName : loggers)
+        for (auto loggerName : loggers)
         {
-          if (_loggers.find(loggerName) == _loggers.end())
-            {
-              throw std::runtime_error("Logger not found!");
-            }
-          if (!_loggers[loggerName]->filter(entry))
-            continue;
-          retval &= _loggers[loggerName]->log(entry);
+            if (_loggers.find(loggerName) == _loggers.end())
+                throw std::runtime_error("Logger not found!");
+            if (!_loggers[loggerName]->filter(entry))
+                continue;
+            retval &= _loggers[loggerName]->log(entry);
         }
     }
-  else
+    else
     {
-      for (std::pair<const std::string, std::shared_ptr < ALogger >> &logger : _loggers)
+        for (std::pair<const std::string, std::shared_ptr < ALogger >> &logger : _loggers)
         {
-          if (!logger.second->filter(entry))
-            continue;
-          retval &= logger.second->log(entry);
+            if (!logger.second->filter(entry))
+                continue;
+            retval &= logger.second->log(entry);
         }
     }
-  return retval;
+    isLogging_ = false;
+    return retval;
 }
